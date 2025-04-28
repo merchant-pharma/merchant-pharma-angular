@@ -20,6 +20,8 @@ import { FeesStructureComponent } from './features/admissions/fees-structure/fee
 import { ScholarshipInfoComponent } from './features/admissions/scholarship-info/scholarship-info.component';
 import { DocumentsRequiredComponent } from './features/admissions/documents-required/documents-required.component';
 import { OnlineApplicationFormComponent } from './features/admissions/online-application-form/online-application-form.component';
+import { FacultyProfilesComponent } from './features/faculty-profiles/faculty-profiles.component';
+import { FacultyProfileDetailsComponent } from './features/faculty-profile-details/faculty-profile-details.component';
 
 export const routes: Routes = [
     { path: '', component: HomepageComponent, pathMatch: 'full' }, // Home
@@ -61,4 +63,7 @@ export const routes: Routes = [
     { path: 'testimonial', component: TestimonialComponent }, // Testimonial + Dean's Message
     { path: 'courses', component: PopularCoursesComponent }, // Courses
     { path: 'contact', component: ContactUsComponent }, // Contact
+    { path: 'faculty', component: FacultyProfilesComponent }, // Route for the faculty list
+    { path: 'faculty/:id', component: FacultyProfileDetailsComponent }, // Route for individual faculty details
+   
 ];
