@@ -1,0 +1,57 @@
+<div class="container-xxl py-5">
+    <div class="container">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h6 class="section-title bg-white text-center text-primary px-3">Our Faculty</h6>
+        <h1 class="mb-5">Expert Instructors</h1>
+      </div>
+      <div class="row justify-content-center mb-4 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="col-lg-8 d-flex justify-content-center">
+          <form [formGroup]="filterForm" class="d-flex gap-3">
+            <div>
+              <label for="departmentFilter" class="form-label visually-hidden">Filter by Department</label>
+              <select class="form-select" id="departmentFilter" formControlName="department">
+                <option value="all">All Departments</option>
+                <option *ngFor="let dept of departments" [value]="dept">{{ dept | titlecase }}</option>
+              </select>
+            </div>
+            <div>
+              <label for="roleFilter" class="form-label visually-hidden">Filter by Role</label>
+              <select class="form-select" id="roleFilter" formControlName="role">
+                <option value="all">All Roles</option>
+                <option *ngFor="let role of roles" [value]="role">{{ role | titlecase }}</option>
+              </select>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row g-4">
+        @for (faculty of filteredFacultyMembers; track $index; let i = $index) {
+          <div class="col-lg-3 col-md-6 wow fadeInUp" [attr.data-wow-delay]="getWowDelay(i)">
+            <div class="team-item bg-light">
+              <div class="overflow-hidden">
+                <img class="img-fluid" [src]="faculty.photoUrl || '/assets/img/team-1.jpg'" alt="{{ faculty.name }}">
+              </div>
+              <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                  @if (faculty.socialLinks?.facebook) {
+                    <a class="btn btn-sm-square btn-primary mx-1" [href]="faculty.socialLinks?.facebook"><fa-icon [icon]="faFacebookF"></fa-icon></a>
+                  }
+                  @if (faculty.socialLinks?.twitter) {
+                    <a class="btn btn-sm-square btn-primary mx-1" [href]="faculty.socialLinks?.twitter"><fa-icon [icon]="faTwitter"></fa-icon></a>
+                  }
+                  @if (faculty.socialLinks?.instagram) {
+                    <a class="btn btn-sm-square btn-primary mx-1" [href]="faculty.socialLinks?.instagram"><fa-icon [icon]="faInstagram"></fa-icon></a>
+                  }
+                </div>
+              </div>
+              <div class="text-center p-4">
+                <h5 class="mb-0">{{ faculty.name }}</h5>
+                <small>{{ faculty.role }} - {{ faculty.department }}</small>
+                <a [routerLink]="['/faculty', faculty.id]" class="btn btn-sm btn-primary mt-2">View Profile</a>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
