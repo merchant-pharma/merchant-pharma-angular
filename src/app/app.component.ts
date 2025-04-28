@@ -1,15 +1,17 @@
-import { NgFor } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { NavbarComponent } from "./features/navbar/navbar.component";
-import { ServicesComponent } from "./features/services/services.component";
-import { AboutComponent } from "./features/about/about.component";
-import { CourseCategoriesComponent } from "./features/course-categories/course-categories.component";
-import { PopularCoursesComponent } from "./features/popular-courses/popular-courses.component";
+import { FooterComponent } from './features/footer/footer.component';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NgFor, CarouselModule, NavbarComponent, ServicesComponent, AboutComponent, CourseCategoriesComponent, PopularCoursesComponent],
+  imports: [
+    RouterOutlet,
+    CarouselModule, 
+    NavbarComponent,
+    FooterComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,0 +1,30 @@
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h6 class="section-title bg-white text-center text-primary px-3">Highlights</h6>
+      <h1 class="mb-5">Our Key Achievements</h1>
+    </div>
+    <div class="row g-4 justify-content-center">
+      @for (highlight of highlights; track $index; let i = $index) {
+        <div class="col-lg-4 col-md-6 wow fadeInUp" [attr.data-wow-delay]="(i * 0.2 + 0.1) + 's'">
+          <div class="course-item bg-light h-100">
+            <div class="position-relative overflow-hidden d-flex align-items-center justify-content-center" style="min-height: 200px;">
+              <div class="w-100 d-flex justify-content-center position-absolute top-50 start-50 translate-middle">
+                <fa-icon [icon]="highlight.icon" class="fa-3x text-primary"></fa-icon>
+              </div>
+            </div>
+            <div class="text-center p-4">
+              <h5 class="mb-4">{{ highlight.title }}</h5>
+              <p class="mb-0">{{ highlight.value }}</p>
+            </div>
+            @if (highlight.link) {
+              <div class="d-flex border-top">
+                <a [routerLink]="[highlight.link]" class="btn btn-sm btn-primary px-3 w-100" style="border-radius: 0;">Learn More</a>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

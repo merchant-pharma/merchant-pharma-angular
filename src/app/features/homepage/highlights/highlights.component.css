@@ -1,0 +1,27 @@
+.course-item {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    height: 100%; /* Ensure consistent height for all highlight boxes */
+  }
+  
+  .course-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .course-item .position-relative {
+    overflow: hidden;
+    background-color: #f8f9fa; /* Light background for the icon area */
+  }
+  
+  .course-item .text-center h5 {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .course-item .text-center p {
+    color: #666;
+  }
+  
+  .course-item .d-flex.border-top a {
+    border-radius: 0 !important;
+  }

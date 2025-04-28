@@ -1,0 +1,25 @@
+.professional-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .professional-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
+    line-height: 1.5;
+  }
+  
+  .professional-list li i {
+    margin-right: 0.5em;
+    font-size: 1em; /* Adjust as needed */
+  }
+  
+  /* Optional: Specific styling for icons based on context (already handled by Bootstrap classes in HTML) */
+  /* .professional-list li i.fa-check-circle {
+    color: green;
+  }
+  
+  .professional-list li i.fa-exclamation-triangle {
+    color: orange;
+  } */

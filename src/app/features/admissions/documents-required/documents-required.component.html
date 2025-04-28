@@ -1,0 +1,22 @@
+<div>
+  <h2 class="mb-4">Documents Required for Admission</h2>
+  <p class="mb-4">Please ensure you have the following documents ready for the admission process. Having all necessary documents will help in a smooth and timely completion of your application.</p>
+
+  @for (category of requiredDocuments; track $index) {
+    <h5 class="mt-4 mb-3">{{ category.title }}</h5>
+    <ul class="professional-list">
+      @for (doc of category.documents; track $index) {
+        <li><i class="fas fa-chevron-right me-2"></i>{{ doc }}</li>
+      }
+    </ul>
+  }
+
+  <h5 class="mt-4 mb-3">Important Instructions</h5>
+  <ul class="professional-list important-instructions">
+    @for (instruction of importantInstructions; track $index) {
+      <li><i class="fas fa-exclamation-circle me-2"></i>{{ instruction }}</li>
+    }
+  </ul>
+
+  <p class="mt-4">For any queries regarding the required documents, please contact the admissions office.</p>
+</div>

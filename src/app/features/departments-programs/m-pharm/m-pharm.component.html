@@ -1,0 +1,18 @@
+<div>
+    <h2 class="mb-4">Master of Pharmacy (M.Pharm)</h2>
+    <p class="mb-4">Postgraduate programs offering specialization in various pharmaceutical fields...</p>
+  
+    <h5 class="mb-3">Specializations Offered</h5>
+    <div class="row g-4">
+      @for (spec of specializations; track $index) {
+        <div class="col-md-6">
+          <div class="bg-light p-4 rounded">
+            <h6 class="mb-3">{{ spec.name }}</h6>
+            <p class="mb-1"><strong>Duration:</strong> {{ spec.duration }}</p>
+            <p class="mb-1"><strong>Eligibility:</strong> {{ spec.eligibility }}</p>
+            <a [href]="spec.applyLink" class="btn btn-sm btn-primary">Apply Now</a>
+          </div>
+        </div>
+      }
+    </div>
+  </div>

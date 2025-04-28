@@ -1,0 +1,16 @@
+<div>
+    <h2 class="mb-4">Ph.D in Pharmacy</h2>
+    <p class="mb-4">Doctoral research programs in various pharmacy disciplines...</p>
+  
+    <h5 class="mb-3">Eligibility</h5>
+    <p class="mb-3">{{ eligibility }}</p>
+  
+    <h5 class="mb-3">Research Areas</h5>
+    <ul class="list-group mb-4">
+      @for (area of researchAreas; track $index) {
+        <li class="list-group-item">{{ area }}</li>
+      }
+    </ul>
+  
+    <a [href]="admissionProcessLink" class="btn btn-primary py-md-3 px-md-5">Admission Process</a>
+  </div>

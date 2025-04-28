@@ -100,7 +100,7 @@
       <h1 class="mb-5">Popular Courses</h1>
     </div>
     <div class="row g-4 justify-content-center">
-      @for (course of courses; track course.title; let i = $index) {
+      @for (course of courses; track $index; let i = $index) {
         <div class="col-lg-4 col-md-6 wow fadeInUp" [attr.data-wow-delay]="(i * 0.2 + 0.1) + 's'">
           <div class="course-item bg-light">
             <div class="position-relative overflow-hidden">

@@ -1,0 +1,30 @@
+<div>
+  <h2 class="mb-4">Scholarship Information</h2>
+  <p class="mb-4">We believe that financial constraints should not be a barrier to quality education. Our college offers various scholarships and financial aid opportunities to deserving and eligible students.</p>
+
+  <h5 class="mt-4 mb-3">Available Scholarships</h5>
+  @for (scholarship of availableScholarships; track $index) {
+    <div class="card mb-4">
+      <div class="card-body">
+        <h6 class="card-title fw-bold">{{ scholarship.name }}</h6>
+        <p class="card-text"><strong>Eligibility Criteria:</strong> {{ scholarship.eligibilityCriteria }}</p>
+        <p class="card-text"><strong>Amount/Benefit:</strong></p>
+        <ul class="professional-list">
+          <li><i class="fas fa-gift me-2 text-primary"></i>{{ scholarship.amountOrBenefit }}</li>
+        </ul>
+        <p class="card-text"><strong>Application Process:</strong> {{ scholarship.applicationProcess }}</p>
+      </div>
+    </div>
+  }
+
+  <h5 class="mt-4 mb-3">General Instructions</h5>
+  <ul class="professional-list">
+    @for (instruction of generalInstructions; track $index) {
+      <li><i class="fas fa-info-circle me-2 text-info"></i>{{ instruction }}</li>
+    }
+  </ul>
+
+  <p class="mt-4">For more information about scholarships and financial aid, please contact:</p>
+  <p><strong>{{ contactPerson }}</strong></p>
+  <p>Email: <a href="mailto:{{ contactEmail }}">{{ contactEmail }}</a></p>
+</div>

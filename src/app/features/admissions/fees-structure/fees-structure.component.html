@@ -1,0 +1,39 @@
+<div>
+  <h2 class="mb-4">Fees Structure (Academic Year 2025-2026)</h2>
+  <p class="mb-4">The following table outlines the annual fees for our various programs. Please note that other charges may apply as specified.</p>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Program</th>
+        <th>Annual Fee</th>
+        <th>Other Charges</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (fee of programFees; track $index) {
+        <tr>
+          <td>{{ fee.program }}</td>
+          <td>{{ fee.annualFee }}</td>
+          <td>{{ fee.otherCharges || '-' }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <h5 class="mt-4 mb-3">Modes of Payment</h5>
+  <ul class="professional-list">
+    @for (mode of paymentModes; track $index) {
+      <li><i class="fas fa-check-circle me-2 text-success"></i>{{ mode }}</li>
+    }
+  </ul>
+
+  <h5 class="mt-4 mb-3">Important Notes</h5>
+  <ul class="professional-list important-notes">
+    @for (note of importantNotes; track $index) {
+      <li><i class="fas fa-exclamation-triangle me-2 text-warning"></i>{{ note }}</li>
+    }
+  </ul>
+
+  <p class="mt-4">For detailed fee structure and any clarifications, please contact the admissions office.</p>
+</div>

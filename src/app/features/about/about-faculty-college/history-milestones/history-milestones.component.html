@@ -1,0 +1,14 @@
+<div>
+    <h2 class="mb-3">History & Milestones</h2>
+    <p class="mb-4">{{ historyText }}</p>
+    @for (milestone of milestones; track $index) {
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <strong>{{ milestone.year }}</strong>
+        </div>
+        <div class="col-md-9">
+          <p>{{ milestone.description }}</p>
+        </div>
+      </div>
+    }
+  </div>

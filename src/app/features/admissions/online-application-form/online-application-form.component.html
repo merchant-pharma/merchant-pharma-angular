@@ -1,0 +1,113 @@
+<div class="application-form-container">
+  <h2 class="mb-4 text-center">Online Application Form</h2>
+  <p class="mb-4 text-center">Please fill out the form below to begin your application:</p>
+  <form [formGroup]="applicationForm" (ngSubmit)="onSubmit()" class="row g-3">
+    <div class="col-md-6">
+      <label for="fullName" class="form-label">Full Name</label>
+      <input type="text" class="form-control" id="fullName" formControlName="fullName" [class.is-invalid]="submitted && f['fullName'].errors">
+      @if (submitted && f['fullName'].errors) {
+        <div class="invalid-feedback">
+          Full Name is required.
+        </div>
+      }
+    </div>
+    <div class="col-md-6">
+      <label for="email" class="form-label">Email Address</label>
+      <input type="email" class="form-control" id="email" formControlName="email" [class.is-invalid]="submitted && f['email'].errors">
+      @if (submitted && f['email'].errors) {
+        <div class="invalid-feedback">
+          @if (f['email'].errors['required']) {
+            <div>Email is required.</div>
+          }
+          @if (f['email'].errors['email']) {
+            <div>Invalid email format.</div>
+          }
+        </div>
+      }
+    </div>
+    <div class="col-md-6">
+      <label for="program" class="form-label">Program Applying For</label>
+      <select class="form-select" id="program" formControlName="program" [class.is-invalid]="submitted && f['program'].errors">
+        <option value="" disabled selected>Select a Program</option>
+        <option value="b-pharm">B.Pharm</option>
+        <option value="m-pharm">M.Pharm</option>
+        <option value="pharm-d">Pharm.D</option>
+        <option value="phd-pharmacy">Ph.D in Pharmacy</option>
+      </select>
+      @if (submitted && f['program'].errors) {
+        <div class="invalid-feedback">
+          Please select a program.
+        </div>
+      }
+    </div>
+    <div class="col-md-6">
+      <label for="phone" class="form-label">Phone Number</label>
+      <input type="tel" class="form-control" id="phone" formControlName="phone" [class.is-invalid]="submitted && f['phone'].errors">
+      @if (submitted && f['phone'].errors) {
+        <div class="invalid-feedback">
+          @if (f['phone'].errors['required']) {
+            <div>Phone number is required.</div>
+          }
+          @if (f['phone'].errors['pattern']) {
+            <div>Invalid phone number format (10 digits required).</div>
+          }
+        </div>
+      }
+    </div>
+    <div class="col-12">
+      <label for="address" class="form-label">Address</label>
+      <textarea class="form-control" id="address" formControlName="address" [class.is-invalid]="submitted && f['address'].errors"></textarea>
+      @if (submitted && f['address'].errors) {
+        <div class="invalid-feedback">
+          Address is required.
+        </div>
+      }
+    </div>
+    <div class="col-md-6">
+      <label for="city" class="form-label">City</label>
+      <input type="text" class="form-control" id="city" formControlName="city" [class.is-invalid]="submitted && f['city'].errors">
+      @if (submitted && f['city'].errors) {
+        <div class="invalid-feedback">
+          City is required.
+        </div>
+      }
+    </div>
+    <div class="col-md-4">
+      <label for="state" class="form-label">State</label>
+      <input type="text" class="form-control" id="state" formControlName="state" [class.is-invalid]="submitted && f['state'].errors">
+      @if (submitted && f['state'].errors) {
+        <div class="invalid-feedback">
+          State is required.
+        </div>
+      }
+    </div>
+    <div class="col-md-2">
+      <label for="postalCode" class="form-label">Postal Code</label>
+      <input type="text" class="form-control" id="postalCode" formControlName="postalCode" [class.is-invalid]="submitted && f['postalCode'].errors">
+      @if (submitted && f['postalCode'].errors) {
+        <div class="invalid-feedback">
+          @if (f['postalCode'].errors['required']) {
+            <div>Postal code is required.</div>
+          }
+          @if (f['postalCode'].errors['pattern']) {
+            <div>Invalid postal code format (6 digits required).</div>
+          }
+        </div>
+      }
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="terms" formControlName="terms" [class.is-invalid]="submitted && f['terms'].errors">
+        <label class="form-check-label" for="terms">I agree to the terms and conditions</label>
+        @if (submitted && f['terms'].errors) {
+          <div class="invalid-feedback">
+            You must agree to the terms and conditions.
+          </div>
+        }
+      </div>
+    </div>
+    <div class="col-12 text-center">
+      <button type="submit" class="btn btn-primary btn-lg">Submit Application</button>
+    </div>
+  </form>
+</div>
