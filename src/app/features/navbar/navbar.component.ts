@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBook, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faBook, faArrowRight,faPills ,faDna} from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-navbar',
@@ -13,4 +14,5 @@ import { faBook, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 export class NavbarComponent {
   faBook = faBook;
   faArrowRight = faArrowRight;
+  faDna=faDna;
 }

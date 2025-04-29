@@ -1,0 +1,16 @@
+.gallery-image-container {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Maintain a 1:1 aspect ratio for the container (square) */
+  overflow: hidden; /* Clip images that don't fit the container */
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the container while maintaining aspect ratio */
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-image-container:hover .gallery-image {
+  transform: scale(1.05);
+}

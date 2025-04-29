@@ -1,23 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { NgwWowService } from 'ngx-wow';
+import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-dean-director-message',
   standalone: true,
-  imports: [],
+  imports: [ CommonModule,FontAwesomeModule],
   templateUrl: './dean-director-message.component.html',
   styleUrls: ['./dean-director-message.component.css']
 })
 export class DeanDirectorMessageComponent implements OnInit {
-  deanDirectorName: string = 'Dr. [Dean/Director Name]';
-  deanDirectorDesignation: string = 'Dean / Director, Faculty / College of Pharmacy';
-  message: string = `It is with immense pride and enthusiasm that I welcome you to the Faculty / College of Pharmacy. 
-    In this era of rapid advancements in pharmaceutical sciences and healthcare, our college stands at the forefront 
-    of providing quality education and fostering groundbreaking research. We are committed to equipping our students 
-    with the knowledge, skills, and ethical values necessary to excel as pharmacy professionals and contribute meaningfully 
-    to patient care and pharmaceutical innovation. We encourage you to explore the opportunities available here and 
-    become part of our vibrant and dedicated community.`;
-
+  deanMessage = {
+    intro: 'Welcome to our institution, where tradition meets innovation.',
+    body: 'As the Dean, I take pride in our commitment to excellence, inclusivity, and lifelong learning. Our faculty and students are at the heart of a vibrant academic community.',
+    name: 'Dr. A.K. Sharma'
+  };
+  
+  coreValues = [
+    'Integrity and Ethics',
+    'Excellence in Teaching',
+    'Inclusive Learning Environment',
+    'Community Engagement',
+    'Innovation and Research'
+  ];
+  
   constructor(private wowService: NgwWowService) {}
 
   ngOnInit(): void {

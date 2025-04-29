@@ -1,13 +1,15 @@
-<div class="container-xxl py-5">
+  <div class="container-xxl py-5">
     <div class="container">
       <div class="row g-5">
-        <div class="col-lg-3 wow fadeInUp" data-wow-delay="0.1s">
+        <!-- Sidebar Navigation -->
+        <div class="col-lg-3" data-wow-delay="0.1s">
           <div class="d-flex flex-column nav nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <a class="nav-link active" id="v-pills-process-tab" [routerLink]="['./process']" routerLinkActive="active" aria-selected="true">Admission Process</a>
-            <a class="nav-link" id="v-pills-dates-tab" [routerLink]="['./important-dates']" routerLinkActive="active" aria-selected="false">Important Dates</a>
-            <a class="nav-link" id="v-pills-fees-tab" [routerLink]="['./fees-structure']" routerLinkActive="active" aria-selected="false">Fees Structure</a>
-            <a class="nav-link" id="v-pills-scholarship-tab" [routerLink]="['./scholarship-info']" routerLinkActive="active" aria-selected="false">Scholarship Info</a>
-            <a class="nav-link" id="v-pills-documents-tab" [routerLink]="['./documents-required']" routerLinkActive="active" aria-selected="false">Documents Required</a>
+            <a class="nav-link active" [routerLink]="['./process']" routerLinkActive="active" aria-selected="true">Admission Process</a>
+            <a class="nav-link" [routerLink]="['./important-dates']" routerLinkActive="active" aria-selected="false">Important Dates</a>
+            <a class="nav-link" [routerLink]="['./fees-structure']" routerLinkActive="active" aria-selected="false">Fees Structure</a>
+            <a class="nav-link" [routerLink]="['./scholarship-info']" routerLinkActive="active" aria-selected="false">Scholarship Info</a>
+            <a class="nav-link" [routerLink]="['./documents-required']" routerLinkActive="active" aria-selected="false">Documents Required</a>
+  
             <div class="mt-4">
               <h5 class="mb-3">Quick Actions</h5>
               <a [routerLink]="['./apply-online']" class="btn btn-primary w-100 mb-2">Online Application Form</a>
@@ -16,7 +18,9 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-9 wow fadeInUp" data-wow-delay="0.3s">
+  
+        <!-- Main Content -->
+        <div class="col-lg-9 wow " data-wow-delay="0.3s">
           <div class="tab-content" id="v-pills-tabContent">
             <router-outlet></router-outlet>
           </div>
@@ -24,3 +28,4 @@
       </div>
     </div>
   </div>
+  
