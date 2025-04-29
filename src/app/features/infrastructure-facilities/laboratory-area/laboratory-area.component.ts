@@ -2,13 +2,7 @@ import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgwWowService } from 'ngx-wow';
 import { Subject, takeUntil } from 'rxjs';
-
-interface GalleryImage {
-  url: string;
-  alt: string;
-  wowDelay: string;
-}
-
+import { GalleryImage } from '../../../models/GalleryImage';
 @Component({
   selector: 'app-laboratory-area',
   imports: [CommonModule],
