@@ -1,4 +1,3 @@
-import { NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { NgwWowService } from 'ngx-wow';
@@ -13,7 +12,7 @@ interface Slide {
 @Component({
   selector: 'app-banner-carousel', // Choose an appropriate selector
   standalone: true,
-  imports: [CarouselModule,NgFor],
+  imports: [CarouselModule],
   templateUrl: './banner-carousel.component.html',
   styleUrls: ['./banner-carousel.component.css']
 })

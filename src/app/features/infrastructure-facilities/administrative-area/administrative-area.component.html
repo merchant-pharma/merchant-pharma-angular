@@ -1,0 +1,24 @@
+<div class="container-fluid-xxl py-5">
+    <div class="container-fluid">
+      <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Administrative Area</h1>      
+      <div class="row mt-5">
+        <h2 class="text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">Gallery</h2>
+        <div class="col-md-12">
+          <div class="row g-3">
+            @for (image of laboratoryImages; track $index) {
+              <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="rounded overflow-hidden gallery-image-container">
+                  <img [src]="image.url" [alt]="image.alt" class="img-fluid gallery-image">
+                </div>
+              </div>
+            }
+            @empty {
+              <div class="col-12 text-center py-3">
+                <p>No images available for the Administrative area.</p>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

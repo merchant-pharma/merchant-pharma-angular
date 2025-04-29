@@ -1,0 +1,29 @@
+.testimonial-section {
+    background: url('/img/Test-bg.png') no-repeat center center/cover;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .testimonial-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6); /* semi-transparent white */
+    backdrop-filter: blur(6px);
+    z-index: -1;
+  }
+  
+  .testimonial-item {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 20px;
+    transition: transform 0.3s;
+  }
+  
+  .testimonial-item:hover {
+    transform: scale(1.03);
+  }
+  

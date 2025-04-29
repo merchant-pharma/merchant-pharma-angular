@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+  
   <a [routerLink]="['/']" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-    <h2 class="m-0 text-primary"><fa-icon [icon]="faBook" class="me-3"></fa-icon>eLEARNING</h2>
+    <h2 class="m-0 text-primary"><fa-icon [icon]="faDna" class="me-3"></fa-icon>ePharmSchool</h2>
   </a>
   <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
     <span class="navbar-toggler-icon"></span>
@@ -44,10 +45,11 @@
           <a [routerLink]="['/upload-documents']" routerLinkActive="active" class="dropdown-item">Upload Documents</a>
           <a [routerLink]="['/status-check']" routerLinkActive="active" class="dropdown-item">Status Check</a>
         </div>
-      </div>
-
+      </div>     
+      
+      <a [routerLink]="['/infrastructure']" routerLinkActive="active" class="nav-item nav-link">Infrastructure</a>
       <a [routerLink]="['/courses']" routerLinkActive="active" class="nav-item nav-link">Courses</a>
-      <a [routerLink]="['/faculty']" routerLinkActive="active" class="nav-item nav-link">Faculties</a>
+      <a [routerLink]="['/faculty']" routerLinkActive="active" class="nav-item nav-link">Faculty</a>
       <div ngbDropdown class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" ngbDropdownToggle>Pages</a>
         <div ngbDropdownMenu class="dropdown-menu fade-down m-0">

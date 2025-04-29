@@ -22,6 +22,8 @@ import { DocumentsRequiredComponent } from './features/admissions/documents-requ
 import { OnlineApplicationFormComponent } from './features/admissions/online-application-form/online-application-form.component';
 import { FacultyProfilesComponent } from './features/faculty-profiles/faculty-profiles.component';
 import { FacultyProfileDetailsComponent } from './features/faculty-profile-details/faculty-profile-details.component';
+import { InfrastructureFacilitiesComponent } from './features/infrastructure-facilities/infrastructure-facilities.component';
+
 
 export const routes: Routes = [
     { path: '', component: HomepageComponent, pathMatch: 'full' }, // Home
@@ -59,6 +61,8 @@ export const routes: Routes = [
         { path: '', redirectTo: 'process', pathMatch: 'full' }, // Default child route
       ],
     },
+    { path: 'infrastructure', component: InfrastructureFacilitiesComponent },
+    
     { path: 'team', component: TeamComponent }, // Our Team + Introduction & Vision
     { path: 'testimonial', component: TestimonialComponent }, // Testimonial + Dean's Message
     { path: 'courses', component: PopularCoursesComponent }, // Courses
