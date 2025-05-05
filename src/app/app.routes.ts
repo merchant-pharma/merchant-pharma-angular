@@ -23,6 +23,7 @@ import { OnlineApplicationFormComponent } from './features/admissions/online-app
 import { FacultyProfilesComponent } from './features/faculty-profiles/faculty-profiles.component';
 import { FacultyProfileDetailsComponent } from './features/faculty-profile-details/faculty-profile-details.component';
 import { InfrastructureFacilitiesComponent } from './features/infrastructure-facilities/infrastructure-facilities.component';
+import { GalleryComponent } from './features/gallery/gallery.component';
 
 
 export const routes: Routes = [
@@ -68,6 +69,7 @@ export const routes: Routes = [
     { path: 'courses', component: PopularCoursesComponent }, // Courses
     { path: 'contact', component: ContactUsComponent }, // Contact
     { path: 'faculty', component: FacultyProfilesComponent }, // Route for the faculty list
+    {path:'gallery',component:GalleryComponent},
     { path: 'faculty/:id', component: FacultyProfileDetailsComponent }, // Route for individual faculty details
    
 ];
