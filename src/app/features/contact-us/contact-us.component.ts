@@ -1,20 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { NgwWowService } from 'ngx-wow';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faMapMarkerAlt, faPhoneAlt, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 
-interface ContactInfo {
-  officeAddress: string;
-  mobileNumber: string;
-  emailAddress: string;
-  googleMapsEmbedUrl: string;
-}
-
 @Component({
   selector: 'app-contact-us',
   standalone: true,
-  imports: [FontAwesomeModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, FontAwesomeModule, ReactiveFormsModule],
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.css']
 })
@@ -23,48 +18,49 @@ export class ContactUsComponent implements OnInit {
   faPhoneAlt = faPhoneAlt;
   faEnvelopeOpen = faEnvelopeOpen;
 
-  contactDetails: ContactInfo = {
-    officeAddress: '123 Street, New York, USA',
-    mobileNumber: '+012 345 67890',
-    emailAddress: 'info@example.com',
-    googleMapsEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3023.601837986997!2d-74.0774149!3d40.730586!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd144a2a9a8496961!2sHTMLCodex!5e0!3m2!1sen!2sus!4v1679687346090!5m2!1sen!2sus' // Replace with your actual embed URL
+  contactInfo = {
+    address: 'Merchant Pharmacy College, Mehsana, Gujarat, India',
+    phone: '+91 97237 06169',
+    email: 'info@merchantpharmacy.edu.in',
+    workingHours: 'Monday - Saturday: 9:00 AM - 5:00 PM',
+    admissionHours: 'Monday - Friday: 10:00 AM - 4:00 PM',
+    googleMapsUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.1234567890123!2d72.12345678901234!3d23.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDA3JzI0LjUiTiA3MsKwMDcnMjQuNSJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin'
   };
 
-  contactForm!: FormGroup;
+  departments = [
+    { name: 'Pharmacy', email: 'pharmacy@merchantpharmacy.edu.in' },
+    { name: 'Admissions', email: 'admissions@merchantpharmacy.edu.in' },
+    { name: 'Placements', email: 'placements@merchantpharmacy.edu.in' },
+    { name: 'Student Affairs', email: 'studentaffairs@merchantpharmacy.edu.in' }
+  ];
+
+  socialLinks = [
+    { icon: 'fab fa-facebook-f', url: '#' },
+    { icon: 'fab fa-instagram', url: '#' },
+    { icon: 'fab fa-youtube', url: '#' },
+    { icon: 'fab fa-linkedin-in', url: '#' }
+  ];
+
+  formData = {
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  };
 
   constructor(private wowService: NgwWowService) {}
 
   ngOnInit(): void {
     this.wowService.init();
-    this.contactForm = new FormGroup({
-      name: new FormControl('', Validators.required),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      subject: new FormControl('', Validators.required),
-      message: new FormControl('', Validators.required)
-    });
   }
 
-  submitForm(): void {
-    if (this.contactForm.valid) {
-      // In a real application, you would handle form submission logic here
-      console.log('Form submitted:', this.contactForm.value);
-      alert('Form submission is currently simulated. Integrate with a backend service to make it functional.');
-      // Optionally reset the form after submission:
-      // this.contactForm.reset();
-    } else {
-      // Trigger validation to show errors
-      this.markAllAsTouched();
-    }
+  onSubmit(): void {
+    // Handle form submission
+    console.log('Form submitted:', this.formData);
+    // Add your form submission logic here
   }
 
-  markAllAsTouched(): void {
-    Object.keys(this.contactForm.controls).forEach(controlName => {
-      this.contactForm.controls[controlName].markAsTouched();
-    });
+  getWhatsAppUrl(): string {
+    return 'https://wa.me/' + this.contactInfo.phone.replace(/[^0-9]/g, '');
   }
-
-  get nameControl() { return this.contactForm.get('name'); }
-  get emailControl() { return this.contactForm.get('email'); }
-  get subjectControl() { return this.contactForm.get('subject'); }
-  get messageControl() { return this.contactForm.get('message'); }
 }

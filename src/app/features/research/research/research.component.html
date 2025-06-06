@@ -1,0 +1,92 @@
+<div class="container-xxl py-5">
+  <div class="container">
+    <!-- Header Section -->
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h6 class="section-title bg-white text-center text-primary px-3">Research</h6>
+      <h1 class="mb-5">Our Research Excellence</h1>
+    </div>
+
+    <!-- Research Areas -->
+    <div class="row g-4">
+      @for (area of researchAreas; track $index) {
+        <div class="col-lg-4 col-md-6 wow fadeInUp" [attr.data-wow-delay]="area.wowDelay">
+          <div class="research-item bg-light rounded h-100 p-4">
+            <div class="d-flex align-items-center mb-4">
+              <fa-icon [icon]="area.icon" class="fa-2x text-primary flex-shrink-0"></fa-icon>
+              <h5 class="mb-0 ms-3">{{ area.title }}</h5>
+            </div>
+            <p class="mb-4">{{ area.description }}</p>
+            <div class="ms-4">
+              @for (project of area.projects; track $index) {
+                <div class="d-flex mb-2">
+                  <i class="fa fa-check text-primary me-2 mt-1"></i>
+                  <span>{{ project }}</span>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Research Achievements -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="row g-4">
+          @for (achievement of achievements; track $index) {
+            <div class="col-lg-3 col-md-6 wow fadeInUp" [attr.data-wow-delay]="achievement.wowDelay">
+              <div class="fact-item bg-light rounded text-center h-100 p-5">
+                <h1 class="display-2 text-primary mb-3">{{ achievement.figure }}</h1>
+                <h5 class="mb-3">{{ achievement.label }}</h5>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Research Facilities -->
+    <div class="wow fadeInUp" data-wow-delay="0.1s">
+      <div class="row mt-5">
+        <div class="col-lg-6">
+          <h2 class="mb-4">Research Facilities</h2>
+          <div class="d-flex align-items-center mb-3">
+            <i class="fa fa-check text-primary me-3"></i>
+            <p class="mb-0">Advanced Analytical Laboratory</p>
+          </div>
+          <div class="d-flex align-items-center mb-3">
+            <i class="fa fa-check text-primary me-3"></i>
+            <p class="mb-0">Drug Discovery Lab</p>
+          </div>
+          <div class="d-flex align-items-center mb-3">
+            <i class="fa fa-check text-primary me-3"></i>
+            <p class="mb-0">Pharmacology Research Center</p>
+          </div>
+          <div class="d-flex align-items-center">
+            <i class="fa fa-check text-primary me-3"></i>
+            <p class="mb-0">Pharmaceutical Technology Lab</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h2 class="mb-4">Research Support</h2>
+          <div class="d-flex align-items-center mb-3">
+            <i class="fa fa-check text-primary me-3"></i>
+            <p class="mb-0">Research Funding Support</p>
+          </div>
+          <div class="d-flex align-items-center mb-3">
+            <i class="fa fa-check text-primary me-3"></i>
+            <p class="mb-0">Industry Collaborations</p>
+          </div>
+          <div class="d-flex align-items-center mb-3">
+            <i class="fa fa-check text-primary me-3"></i>
+            <p class="mb-0">Publication Support</p>
+          </div>
+          <div class="d-flex align-items-center">
+            <i class="fa fa-check text-primary me-3"></i>
+            <p class="mb-0">Patent Filing Assistance</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

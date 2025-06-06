@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgwWowService } from 'ngx-wow';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 interface QuickLink {
   label: string;
-  url: string;
+  routerLink: string;
 }
 
 interface GalleryImage {
@@ -19,58 +21,59 @@ interface SocialLink {
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [],
+  imports: [RouterModule, CommonModule],
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
   quickLinks: QuickLink[] = [
-    { label: 'About Us', url: '#' },
-    { label: 'Contact Us', url: '#' },
-    { label: 'Privacy Policy', url: '#' },
-    { label: 'Terms & Condition', url: '#' },
-    { label: 'FAQs & Help', url: '#' }
+    { label: 'About College', routerLink: '/about' },
+    { label: 'Contact Us', routerLink: '/contact' },
+    { label: 'Admission', routerLink: '/admission' },
+    { label: 'Departments', routerLink: '/departments' },
+    { label: 'Infrastructure', routerLink: '/infrastructure' }
   ];
 
   galleryImages: GalleryImage[] = [
-    { imageUrl: '/img/course-1.jpg', altText: '' },
-    { imageUrl: '/img/course-2.jpg', altText: '' },
-    { imageUrl: '/img/course-3.jpg', altText: '' },
-    { imageUrl: '/img/course-2.jpg', altText: '' },
-    { imageUrl: '/img/course-3.jpg', altText: '' },
-    { imageUrl: '/img/course-1.jpg', altText: '' }
+    { imageUrl: '/img/campus-1.jpg', altText: 'College Campus' },
+    { imageUrl: '/img/lab-1.jpg', altText: 'Pharmacy Lab' },
+    { imageUrl: '/img/classroom-1.jpg', altText: 'Classroom' },
+    { imageUrl: '/img/event-1.jpg', altText: 'College Event' },
+    { imageUrl: '/img/library-1.jpg', altText: 'Library' },
+    { imageUrl: '/img/campus-2.jpg', altText: 'College Building' }
   ];
 
   socialLinks: SocialLink[] = [
-    { iconClass: 'fab fa-twitter', url: '#' },
+    { iconClass: 'fab fa-whatsapp', url: 'https://wa.me/919723706169' },
     { iconClass: 'fab fa-facebook-f', url: '#' },
+    { iconClass: 'fab fa-instagram', url: '#' },
     { iconClass: 'fab fa-youtube', url: '#' },
     { iconClass: 'fab fa-linkedin-in', url: '#' }
   ];
 
-  siteName: string = 'Your Site Name';
-  designedByLink: string = 'https://htmlcodex.com';
-  designedByName: string = 'HTML Codex';
-  distributedByLink: string = 'https://themewagon.com';
-  distributedByName: string = 'ThemeWagon';
+  siteName: string = 'Merchant Pharmacy College';
 
   footerMenuLinks: QuickLink[] = [
-    { label: 'Home', url: '#' },
-    { label: 'Cookies', url: '#' },
-    { label: 'Help', url: '#' },
-    { label: 'FQAs', url: '#' }
+    { label: 'Home', routerLink: '/' },
+    { label: 'Courses', routerLink: '/courses' },
+    { label: 'Faculty', routerLink: '/faculty' },
+    { label: 'Gallery', routerLink: '/gallery' }
   ];
 
   contactInfo = {
-    address: '123 Street, New York, USA',
-    phone: '+012 345 67890',
-    email: 'info@example.com'
+    address: 'Merchant Pharmacy College, Mehsana, Gujarat, India',
+    phone: '+91 97237 06169',
+    email: 'info@merchantpharmacy.edu.in'
   };
 
-  newsletterText: string = 'Dolor amet sit justo amet elitr clita ipsum elitr est.';
-  newsletterButtonLabel: string = 'SignUp';
+  newsletterText: string = 'Stay updated with our latest news, events, and admission updates.';
+  newsletterButtonLabel: string = 'Subscribe';
 
   constructor(private wowService: NgwWowService) {}
+
+  getWhatsAppUrl(): string {
+    return 'https://wa.me/' + this.contactInfo.phone.replace(/[^0-9]/g, '');
+  }
 
   ngOnInit(): void {
     this.wowService.init();

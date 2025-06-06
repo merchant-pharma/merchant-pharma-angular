@@ -1,3 +1,68 @@
+/* Global styles */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure all containers respect viewport width */
+.container, 
+.container-fluid {
+  max-width: 100vw;
+  overflow-x: hidden;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Ensure rows don't cause overflow */
+.row {
+  margin-right: 0;
+  margin-left: 0;
+  width: 100%;
+}
+
+/* Ensure columns don't cause overflow */
+[class*="col-"] {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Ensure images don't cause overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure tables are responsive */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -15px;
+  padding: 0 15px;
+}
+
+/* Ensure dropdowns don't cause overflow */
+.dropdown-menu {
+  max-width: 100vw;
+}
+
+/* Ensure modals don't cause overflow */
+.modal {
+  overflow-x: hidden;
+}
+
+/* Ensure carousels don't cause overflow */
+.carousel {
+  overflow: hidden;
+}
+
+/* Ensure all content is properly contained */
+* {
+  box-sizing: border-box;
+}
+
 .gallery-image-container {
     width: 100%;
     aspect-ratio: 1 / 1; 

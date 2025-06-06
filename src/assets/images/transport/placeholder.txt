@@ -1,0 +1,7 @@
+This directory contains transportation-related images:
+- bus-1.jpg (main bus image)
+- bus-2.jpg (interior image)
+- bus-3.jpg (route image)
+- safety.jpg (safety features)
+- comfort.jpg (comfort features)
+- route-map.jpg (route map) 
