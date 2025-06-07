@@ -19,17 +19,37 @@ interface Slide {
 export class DynamicBannerComponent implements OnInit {
   slides: Slide[] = [
     {
-      image: 'img/Merchant.jpg',
+      image: 'img/carosel-2.webp',
       subtitle: 'Latest News',
       title: 'Admissions Open for 2025-2026',
       description: 'Secure your future in pharmacy. Apply now for our undergraduate and postgraduate programs.',
     },
     {
-      image: 'img/Merchant.jpg',
+      image: 'img/carosel-1.webp',
       subtitle: 'Announcements',
       title: 'Webinar on Pharmaceutical Innovations',
       description: 'Join our expert panel discussion on the latest advancements in pharmaceutical research.',
     },
+    {
+      image: 'img/carosel-3.webp',
+      subtitle: 'Campus Life',
+      title: 'Annual Cultural Fest 2025',
+      description: 'Experience the vibrant campus life through our cultural events, competitions, and exhibitions.',
+    },
+    {
+      image: 'img/carosel-4.webp',
+      subtitle: 'Research',
+      title: 'New Research Lab Inauguration',
+      description: 'State-of-the-art research facility inaugurated to support groundbreaking pharmaceutical studies.',
+    },
+    {
+      image: 'img/carosel-5.webp',
+      subtitle: 'Placement News',
+      title: 'Top Recruiters On Campus',
+      description: 'Our students are being placed in leading pharma companies. Explore our placement success stories.',
+    },
+    
+  
     // Add more dynamic banner slides
   ];
 
