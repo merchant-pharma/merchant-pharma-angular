@@ -1,0 +1,58 @@
+.committee-item {
+  transition: .5s;
+  box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+}
+
+.committee-item:hover {
+  transform: translateY(-5px);
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.section-title::before,
+.section-title::after {
+  position: absolute;
+  content: "";
+  width: 45px;
+  height: 2px;
+  top: 50%;
+  background: var(--primary);
+}
+
+.section-title::before {
+  left: -55px;
+}
+
+.section-title::after {
+  right: -55px;
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.list-unstyled li {
+  transition: .3s;
+  padding: 4px 0;
+}
+
+.list-unstyled li:hover {
+  padding-left: 8px;
+  color: var(--primary);
+}
+
+.list-unstyled li:hover i {
+  transform: scale(1.2);
+}
+
+.list-unstyled li i {
+  transition: .3s;
+} 

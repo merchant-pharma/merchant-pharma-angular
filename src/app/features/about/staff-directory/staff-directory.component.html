@@ -1,0 +1,33 @@
+<div class="container py-5">
+  <div class="row g-5">
+    <div class="col-lg-12">
+      <h2 class="mb-4">Faculty Directory</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead class="table-primary">
+            <tr>
+              <th>SR. NO</th>
+              <th>FACULTY NAME</th>
+              <th>DESIGNATION</th>
+              <th>SPECIALIZATION</th>
+              <th>CONTACT NO.</th>
+              <th>JOINING DATE</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (faculty of facultyMembers; track faculty.srNo) {
+              <tr>
+                <td>{{ faculty.srNo }}</td>
+                <td>{{ faculty.name }}</td>
+                <td>{{ faculty.designation }}</td>
+                <td>{{ faculty.specialization }}</td>
+                <td>{{ faculty.contactNo }}</td>
+                <td>{{ faculty.joiningDate }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div> 

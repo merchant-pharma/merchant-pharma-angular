@@ -5,12 +5,10 @@ import { HighlightsComponent } from './highlights/highlights.component';
 import { CourseCategoriesComponent } from "../course-categories/course-categories.component";
 import { PopularCoursesComponent } from "../popular-courses/popular-courses.component";
 import { TestimonialComponent } from "../testimonial/testimonial.component";
-import { TeamComponent } from "../team/team.component";
-
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [DynamicBannerComponent, HighlightsComponent, CourseCategoriesComponent, PopularCoursesComponent, TestimonialComponent, TeamComponent],
+  imports: [DynamicBannerComponent, HighlightsComponent, CourseCategoriesComponent, PopularCoursesComponent, TestimonialComponent],
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
