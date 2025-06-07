@@ -1,1 +1,29 @@
- 
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('../../../../public/busimg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* Add an overlay to ensure content is readable */
+:host::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.6); /* Lighter overlay for better image visibility */
+  z-index: 1;
+}
+
+/* Ensure content appears above the overlay */
+:host > * {
+  position: relative;
+  z-index: 2;
+} 
