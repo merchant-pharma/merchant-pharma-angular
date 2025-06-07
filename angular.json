@@ -16,6 +16,7 @@
             "outputPath": "dist/merchant-pharmacy",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "baseHref": "/merchant-pharma/",
             "polyfills": [
               "zone.js"
             ],
@@ -50,8 +51,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "2mb",
+                  "maximumError": "3mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -103,6 +104,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
