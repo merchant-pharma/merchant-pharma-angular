@@ -22,25 +22,25 @@ export class GoverningBodyComponent implements OnInit {
       name: 'Dr. Rajesh Patel',
       position: 'Chairman',
       qualification: 'Ph.D. in Pharmaceutical Sciences',
-      imageUrl: '/img/team-1.jpg'
+      imageUrl: 'img/team-1.jpg'
     },
     {
       name: 'Dr. Priya Shah',
       position: 'Vice Chairman',
       qualification: 'Ph.D. in Pharmacology',
-      imageUrl: '/img/team-2.jpg'
+      imageUrl: 'img/team-2.jpg'
     },
     {
       name: 'Mr. Amit Desai',
       position: 'Secretary',
       qualification: 'M.Pharm, MBA',
-      imageUrl: '/img/team-3.jpg'
+      imageUrl: 'img/team-3.jpg'
     },
     {
       name: 'Dr. Meera Patel',
       position: 'Member',
       qualification: 'Ph.D. in Pharmaceutical Chemistry',
-      imageUrl: '/img/team-4.jpg'
+      imageUrl: 'img/team-4.jpg'
     }
   ];
 

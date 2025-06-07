@@ -19,13 +19,13 @@ interface Slide {
 export class BannerCarouselComponent implements OnInit {
   slides: Slide[] = [
     {
-      image: '/img/carousel-1.jpg',
+      image: 'img/carousel-1.jpg',
       subtitle: 'First Slide Subtitle',
       title: 'First Slide Title',
       description: 'First slide description goes here.',
     },
     {
-      image: '/img/carousel-2.jpg',
+      image: 'img/carousel-2.jpg',
       subtitle: 'Second Slide Subtitle',
       title: 'Second Slide Title',
       description: 'Second slide description goes here.',

@@ -19,13 +19,13 @@ interface Slide {
 export class DynamicBannerComponent implements OnInit {
   slides: Slide[] = [
     {
-      image: '/img/Merchant.jpg',
+      image: 'img/Merchant.jpg',
       subtitle: 'Latest News',
       title: 'Admissions Open for 2025-2026',
       description: 'Secure your future in pharmacy. Apply now for our undergraduate and postgraduate programs.',
     },
     {
-      image: '/img/Merchant.jpg',
+      image: 'img/Merchant.jpg',
       subtitle: 'Announcements',
       title: 'Webinar on Pharmaceutical Innovations',
       description: 'Join our expert panel discussion on the latest advancements in pharmaceutical research.',

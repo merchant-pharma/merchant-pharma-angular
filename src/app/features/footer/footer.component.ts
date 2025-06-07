@@ -35,12 +35,12 @@ export class FooterComponent implements OnInit {
   ];
 
   galleryImages: GalleryImage[] = [
-    { imageUrl: '/img/campus-1.jpg', altText: 'College Campus' },
-    { imageUrl: '/img/lab-1.jpg', altText: 'Pharmacy Lab' },
-    { imageUrl: '/img/classroom-1.jpg', altText: 'Classroom' },
-    { imageUrl: '/img/event-1.jpg', altText: 'College Event' },
-    { imageUrl: '/img/library-1.jpg', altText: 'Library' },
-    { imageUrl: '/img/campus-2.jpg', altText: 'College Building' }
+    { imageUrl: 'img/campus-1.jpg', altText: 'College Campus' },
+    { imageUrl: 'img/lab-1.jpg', altText: 'Pharmacy Lab' },
+    { imageUrl: 'img/classroom-1.jpg', altText: 'Classroom' },
+    { imageUrl: 'img/event-1.jpg', altText: 'College Event' },
+    { imageUrl: 'img/library-1.jpg', altText: 'Library' },
+    { imageUrl: 'img/campus-2.jpg', altText: 'College Building' }
   ];
 
   socialLinks: SocialLink[] = [

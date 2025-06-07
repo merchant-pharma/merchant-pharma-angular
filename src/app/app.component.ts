@@ -19,13 +19,13 @@ export class AppComponent {
   title = 'merchant-pharmacy';
   slides = [
     {
-      image: '/img/carousel-1.jpg',
+      image: 'img/carousel-1.jpg',
       subtitle: 'Best Online Courses',
       title: 'The Best Online Learning Platform',
       description: 'Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no.'
     },
     {
-      image: '/img/carousel-2.jpg',
+      image: 'img/carousel-2.jpg',
       subtitle: 'Best Online Courses',
       title: 'Get Educated Online From Your Home',
       description: 'Kasd rebum ipsum et diam justo clita et kasd rebum sea sanctus.'

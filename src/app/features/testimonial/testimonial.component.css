@@ -1,5 +1,5 @@
 .testimonial-section {
-    background: url('/img/Test-bg.png') no-repeat center center/cover;
+    background: url('img/Test-bg.png') no-repeat center center/cover;
     position: relative;
     z-index: 1;
   }

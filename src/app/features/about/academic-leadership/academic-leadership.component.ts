@@ -81,7 +81,7 @@ export class AcademicLeadershipComponent implements OnInit {
       qualification: 'Ph.D. in Pharmaceutical Sciences',
       experience: '20+ years in academia',
       specialization: 'Pharmaceutical Research & Development',
-      imageUrl: '/img/team-1.jpg'
+      imageUrl: 'img/team-1.jpg'
     },
     {
       name: 'Dr. Priya Sharma',
@@ -89,7 +89,7 @@ export class AcademicLeadershipComponent implements OnInit {
       qualification: 'Ph.D. in Pharmacology',
       experience: '15+ years in research',
       specialization: 'Drug Discovery & Development',
-      imageUrl: '/img/team-2.jpg'
+      imageUrl: 'img/team-2.jpg'
     },
     {
       name: 'Dr. Amit Patel',
@@ -97,7 +97,7 @@ export class AcademicLeadershipComponent implements OnInit {
       qualification: 'Ph.D. in Pharmaceutical Technology',
       experience: '18+ years in industry & academia',
       specialization: 'Pharmaceutical Innovation & Patents',
-      imageUrl: '/img/team-3.jpg'
+      imageUrl: 'img/team-3.jpg'
     }
   ];
 

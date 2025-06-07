@@ -52,7 +52,7 @@ export class PopularCoursesComponent implements OnInit {
 
   courses: Course[] = [
     {
-      imageUrl: '/img/course-1.jpg',
+      imageUrl: 'img/course-1.jpg',
       price: '$149.00',
       rating: 5,
       title: 'Web Design & Development Course for Beginners',
@@ -61,7 +61,7 @@ export class PopularCoursesComponent implements OnInit {
       students: '30 Students'
     },
     {
-      imageUrl: '/img/course-2.jpg',
+      imageUrl: 'img/course-2.jpg',
       price: '$149.00',
       rating: 5,
       title: 'Graphic Design Fundamentals',
@@ -70,7 +70,7 @@ export class PopularCoursesComponent implements OnInit {
       students: '45 Students'
     },
     {
-      imageUrl: '/img/course-3.jpg',
+      imageUrl: 'img/course-3.jpg',
       price: '$199.00',
       rating: 4,
       title: 'Advanced Video Editing Techniques',
