@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { NgwWowService } from 'ngx-wow';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-about',
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule, RouterOutlet,RouterLink],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })

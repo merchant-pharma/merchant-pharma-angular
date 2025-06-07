@@ -1,0 +1,40 @@
+  <div class="container-fluid-xxl py-5">
+    <div class="container-fluid">
+    <h2 class=" bg-white text-center text-danger mt-3">DEPARTMENT</h2>
+      @for (gallery of listGallery; track $index) {
+        <div class="text-center wow fadeInUp mt-4" data-wow-delay="0.1s">
+          <h5 class="section-title bg-white text-center text-primary px-3">{{gallery.name}}</h5>
+          <h6 class="mb-5">{{gallery.desc}}</h6>
+        </div>
+        <div class="row g-4">
+          @for (images of gallery.imageUrls; track $index; let i = $index) {
+            <div class="col-lg-6 col-md-12 wow fadeInUp" [attr.data-wow-delay]="gallery.wowDelay">
+              <div class="team-item bg-light">
+                <div class="overflow-hidden">
+                  <img class="img-fluid gallery-image" [src]="images" alt="{{ images }}">
+                </div>                    
+              </div>
+            </div>
+          }
+        </div>
+      }
+      <h2 class=" bg-white text-center text-danger mt-3">Activities</h2>
+
+      @for (gallery of listEvents; track $index) {
+        <div class="text-center wow fadeInUp mt-4" data-wow-delay="0.1s">
+          <h5 class="section-title bg-white text-center text-primary px-3">{{gallery.name}}</h5>
+        </div>
+        <div class="row g-4">
+          @for (images of gallery.imageUrls; track $index; let i = $index) {
+            <div class="col-lg-6 col-md-12 wow fadeInUp" [attr.data-wow-delay]="gallery.wowDelay">
+              <div class="team-item bg-light">
+                <div class="overflow-hidden">
+                  <img class="img-fluid gallery-image" [src]="images" alt="{{ images }}">
+                </div>                    
+              </div>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </div>

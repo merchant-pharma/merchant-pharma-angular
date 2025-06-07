@@ -1,0 +1,19 @@
+<div>
+    <h2 class="mb-4">Bachelor of Pharmacy (B.Pharm)</h2>
+    <p class="mb-4">A comprehensive undergraduate program in pharmaceutical sciences...</p>
+
+    <h5 class="mb-3">Course Duration</h5>
+    <p class="mb-3">{{ courseDuration }}</p>
+
+    <h5 class="mb-3">Eligibility</h5>
+    <p class="mb-3">{{ eligibility }}</p>
+
+    <h5 class="mb-3">Curriculum Outline</h5>
+    <ul class="list-group mb-4">
+        @for (item of curriculumOutline; track $index) {
+        <li class="list-group-item">{{ item }}</li>
+        }
+    </ul>
+
+    <button class="btn btn-primary py-md-3 px-md-5" (click)="applyNow()">Apply Now</button>
+</div>

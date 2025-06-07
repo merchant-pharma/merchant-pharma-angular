@@ -1,0 +1,135 @@
+.award-item {
+  transition: .5s;
+  box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+}
+
+.award-item:hover {
+  transform: translateY(-5px);
+}
+
+.award-icon {
+  width: 50px;
+  height: 50px;
+  transition: .5s;
+}
+
+.award-item:hover .award-icon {
+  transform: scale(1.1);
+}
+
+.fact-item {
+  transition: .5s;
+  box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+}
+
+.fact-item:hover {
+  transform: translateY(-5px);
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.section-title::before,
+.section-title::after {
+  position: absolute;
+  content: "";
+  width: 45px;
+  height: 2px;
+  top: 50%;
+  background: var(--primary);
+}
+
+.section-title::before {
+  left: -55px;
+}
+
+.section-title::after {
+  right: -55px;
+}
+
+/* Timeline Styles */
+.timeline {
+  position: relative;
+  padding: 45px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: var(--primary);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.timeline-item {
+  padding: 0 30px 20px;
+  position: relative;
+  width: 50%;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 10px;
+  right: -8px;
+  background: #FFFFFF;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-item.right::after {
+  left: -8px;
+}
+
+.timeline-content {
+  padding: 20px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+  transition: .5s;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+}
+
+.timeline-content h5 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+@media (max-width: 767.98px) {
+  .timeline::before {
+    left: 40px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .timeline-item.right {
+    left: 0;
+  }
+
+  .timeline-item::after {
+    left: 32px;
+  }
+
+  .timeline-item.right::after {
+    left: 32px;
+  }
+} 
