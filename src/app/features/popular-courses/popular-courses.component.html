@@ -12,8 +12,8 @@
             <img class="img-fluid" [src]="course.imageUrl" alt="{{ course.title }}">
             <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
               <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
-                style="border-radius: 30px 0 0 30px;">Read More</a>
-              <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join
+                style="border-radius: 30px 0 0 30px; background-color: maroon; border-color: maroon;">Read More</a>
+              <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0; background-color: maroon; border-color: maroon;">Join
                 Now</a>
             </div>
           </div>
@@ -21,7 +21,7 @@
             <h3 class="mb-0">{{ course.price }}</h3>
             <div class="mb-3">
               @for (star of getStarArray(course.rating); track $index) {
-              <fa-icon [icon]="faStar" class="text-primary"></fa-icon>
+              <fa-icon [icon]="faStar" style="color: maroon;"></fa-icon>
               }
               <small>(123)</small>
             </div>
@@ -29,10 +29,10 @@
           </div>
           <div class="d-flex border-top">
             <small class="flex-fill text-center border-end py-2"><fa-icon [icon]="faUserTie"
-                class="text-primary me-2"></fa-icon>{{ course.instructor }}</small>
+                style="color: maroon;" class="me-2"></fa-icon>{{ course.instructor }}</small>
             <small class="flex-fill text-center border-end py-2"><fa-icon [icon]="faClock"
-                class="text-primary me-2"></fa-icon>{{ course.duration }}</small>
-            <small class="flex-fill text-center py-2"><fa-icon [icon]="faUser" class="text-primary me-2"></fa-icon>{{
+                style="color: maroon;" class="me-2"></fa-icon>{{ course.duration }}</small>
+            <small class="flex-fill text-center py-2"><fa-icon [icon]="faUser" style="color: maroon;" class="me-2"></fa-icon>{{
               course.students }}</small>
           </div>
         </div>

@@ -11,7 +11,7 @@
   width: 45px;
   height: 2px;
   top: 50%;
-  background: var(--primary);
+  background: maroon;
 }
 
 .section-title::before {
@@ -28,7 +28,7 @@
 }
 
 .research-item:hover {
-  box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+  box-shadow: 0 0 45px rgba(128, 0, 0, .1);
   transform: translateY(-5px);
 }
 
@@ -39,7 +39,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50px;
-  background: rgba(var(--primary-rgb), .1);
+  background: rgba(128, 0, 0, .1);
 }
 
 .fact-item {
@@ -48,7 +48,7 @@
 }
 
 .fact-item:hover {
-  box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+  box-shadow: 0 0 45px rgba(128, 0, 0, .1);
   transform: translateY(-5px);
 }
 
@@ -57,7 +57,7 @@
 }
 
 .text-primary {
-  color: var(--primary) !important;
+  color: maroon !important;
 }
 
 .bg-light {

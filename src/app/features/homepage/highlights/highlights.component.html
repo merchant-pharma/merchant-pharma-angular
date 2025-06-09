@@ -1,7 +1,7 @@
 <div class="container-fluid-xxl py-5">
   <div class="container-fluid">
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-      <h6 class="section-title bg-white text-center text-primary px-3">Highlights</h6>
+      <h6 class="section-title bg-white text-center px-3" style="color: maroon;">Highlights</h6>
       <h1 class="mb-5">Our Key Achievements</h1>
     </div>
     <div class="row g-4 justify-content-center">
@@ -10,7 +10,7 @@
           <div class="course-item bg-light h-100">
             <div class="position-relative overflow-hidden d-flex align-items-center justify-content-center" style="min-height: 200px;">
               <div class="w-100 d-flex justify-content-center position-absolute top-50 start-50 translate-middle">
-                <fa-icon [icon]="highlight.icon" class="fa-3x text-primary"></fa-icon>
+                <fa-icon [icon]="highlight.icon" class="fa-3x" style="color: maroon;"></fa-icon>
               </div>
             </div>
             <div class="text-center p-4">
@@ -19,7 +19,7 @@
             </div>
             @if (highlight.link) {
               <div class="d-flex border-top">
-                <a [routerLink]="[highlight.link]" class="btn btn-sm btn-primary px-3 w-100" style="border-radius: 0;">Learn More</a>
+                <a [routerLink]="[highlight.link]" class="btn btn-sm px-3 w-100" style="border-radius: 0; background-color: maroon; border-color: maroon; color: white;">Learn More</a>
               </div>
             }
           </div>

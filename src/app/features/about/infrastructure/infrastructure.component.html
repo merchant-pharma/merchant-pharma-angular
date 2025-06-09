@@ -1,7 +1,7 @@
 <div class="container-xxl py-5">
   <div class="container">
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-      <h6 class="section-title bg-white text-center text-primary px-3">Infrastructure</h6>
+      <h6 class="section-title bg-white text-center px-3" style="color: maroon;">Infrastructure</h6>
       <h1 class="mb-5">Our Campus Facilities</h1>
     </div>
 
@@ -10,7 +10,7 @@
         <div class="col-lg-3 col-md-6 wow fadeInUp" [attr.data-wow-delay]="0.1 * ($index + 1) + 's'">
           <div class="facility-item bg-light rounded h-100 p-4">
             <div class="d-flex align-items-center mb-4">
-              <div class="facility-icon bg-primary rounded-circle d-flex align-items-center justify-content-center">
+              <div class="facility-icon rounded-circle d-flex align-items-center justify-content-center" style="background-color: maroon;">
                 <fa-icon [icon]="facility.icon" class="text-white fs-4"></fa-icon>
               </div>
               <h5 class="mb-0 ms-3">{{ facility.name }}</h5>
@@ -19,7 +19,7 @@
             <div class="ms-2">
               @for (feature of facility.features; track $index) {
                 <div class="d-flex mb-2">
-                  <i class="fa fa-check text-primary me-2 mt-1"></i>
+                  <i class="fa fa-check me-2 mt-1" style="color: maroon;"></i>
                   <span>{{ feature }}</span>
                 </div>
               }

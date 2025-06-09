@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgwWowService } from 'ngx-wow';
 import { CommonModule } from '@angular/common';
+import { trigger, transition, style, animate } from '@angular/animations';
 
-interface FacultyMember {
+interface StaffMember {
   srNo: number;
   name: string;
   designation: string;
@@ -15,35 +17,41 @@ interface FacultyMember {
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="container py-5">
-      <div class="row g-5">
-        <div class="col-lg-12">
-          <h2 class="mb-4">Faculty Directory</h2>
-          <div class="table-responsive">
-            <table class="table table-bordered table-striped">
-              <thead class="table-primary">
-                <tr>
-                  <th>SR. NO</th>
-                  <th>FACULTY NAME</th>
-                  <th>DESIGNATION</th>
-                  <th>SPECIALIZATION</th>
-                  <th>CONTACT NO.</th>
-                  <th>JOINING DATE</th>
-                </tr>
-              </thead>
-              <tbody>
-                @for (faculty of facultyMembers; track faculty.srNo) {
+    <div class="container-xxl py-5" [@fadeInUp]>
+      <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h6 class="section-title bg-white text-center px-3" style="color: maroon;">Staff Directory</h6>
+          <h1 class="mb-5">Our Faculty & Staff</h1>
+        </div>
+
+        <div class="row g-5">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped">
+                <thead>
                   <tr>
-                    <td>{{ faculty.srNo }}</td>
-                    <td>{{ faculty.name }}</td>
-                    <td>{{ faculty.designation }}</td>
-                    <td>{{ faculty.specialization }}</td>
-                    <td>{{ faculty.contactNo }}</td>
-                    <td>{{ faculty.joiningDate }}</td>
+                    <th>SR. NO</th>
+                    <th>FACULTY NAME</th>
+                    <th>DESIGNATION</th>
+                    <th>SPECIALIZATION</th>
+                    <th>CONTACT NO.</th>
+                    <th>JOINING DATE</th>
                   </tr>
-                }
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  @for (faculty of facultyMembers; track faculty.srNo) {
+                    <tr>
+                      <td>{{ faculty.srNo }}</td>
+                      <td>{{ faculty.name }}</td>
+                      <td>{{ faculty.designation }}</td>
+                      <td>{{ faculty.specialization }}</td>
+                      <td>{{ faculty.contactNo }}</td>
+                      <td>{{ faculty.joiningDate }}</td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -52,50 +60,91 @@ interface FacultyMember {
   styles: [`
     .table {
       margin-bottom: 0;
+      border-color: rgba(128, 0, 0, 0.1);
     }
 
     .table th {
       font-weight: 600;
       text-align: center;
       vertical-align: middle;
+      background-color: maroon !important;
+      color: white !important;
+      border-color: rgba(128, 0, 0, 0.2) !important;
     }
 
     .table td {
       vertical-align: middle;
-    }
-
-    .table-primary {
-      background-color: var(--primary) !important;
-      color: white;
+      border-color: rgba(128, 0, 0, 0.1);
     }
 
     .table-striped tbody tr:nth-of-type(odd) {
-      background-color: rgba(0, 0, 0, 0.02);
+      background-color: rgba(128, 0, 0, 0.02);
     }
 
-    .table-bordered {
-      border: 1px solid #dee2e6;
+    .table-striped tbody tr:hover {
+      background-color: rgba(128, 0, 0, 0.05);
+      transition: background-color 0.3s ease;
     }
 
-    .table-bordered th,
-    .table-bordered td {
-      border: 1px solid #dee2e6;
+    .section-title {
+      position: relative;
+      display: inline-block;
+      text-transform: uppercase;
+    }
+
+    .section-title::before {
+      position: absolute;
+      content: "";
+      width: 45px;
+      height: 2px;
+      top: 50%;
+      left: -55px;
+      margin-top: -1px;
+      background: maroon;
+    }
+
+    .section-title::after {
+      position: absolute;
+      content: "";
+      width: 45px;
+      height: 2px;
+      top: 50%;
+      right: -55px;
+      margin-top: -1px;
+      background: maroon;
     }
 
     @media (max-width: 768px) {
+      .section-title::before,
+      .section-title::after {
+        width: 30px;
+      }
+      .section-title::before {
+        left: -40px;
+      }
+      .section-title::after {
+        right: -40px;
+      }
       .table-responsive {
         border: 0;
       }
-      
       .table th,
       .table td {
         white-space: nowrap;
       }
     }
-  `]
+  `],
+  animations: [
+    trigger('fadeInUp', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(20px)' }),
+        animate('600ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+      ])
+    ])
+  ]
 })
-export class StaffDirectoryComponent {
-  facultyMembers: FacultyMember[] = [
+export class StaffDirectoryComponent implements OnInit {
+  facultyMembers: StaffMember[] = [
     {
       srNo: 1,
       name: 'Dr. Laxmanbhai Prajapati',
@@ -209,4 +258,10 @@ export class StaffDirectoryComponent {
       joiningDate: '15/03/2025'
     }
   ];
+
+  constructor(private wowService: NgwWowService) {}
+
+  ngOnInit(): void {
+    this.wowService.init();
+  }
 } 

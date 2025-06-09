@@ -1,0 +1,105 @@
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: maroon !important;
+  border-radius: 50%;
+  color: white !important;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+  left: 20px;
+}
+
+.owl-carousel .owl-nav button.owl-next {
+  right: 20px;
+}
+
+.owl-carousel .owl-nav button:hover {
+  background-color: #800000 !important;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.btn {
+  transition: all 0.3s;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+/* Custom maroon button for Read More */
+.btn-maroon {
+  background-color: maroon;
+  border-color: maroon;
+  color: white;
+  transition: all 0.3s;
+}
+
+.btn-maroon:hover {
+  background-color: #800000;
+  border-color: #800000;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Secondary button (Join Now) */
+.btn[style*="border: 2px solid maroon"]:hover {
+  background-color: maroon !important;
+  color: white !important;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInDown {
+  animation-name: slideInDown;
+}
+
+.slideInLeft {
+  animation-name: slideInLeft;
+}
+
+.slideInRight {
+  animation-name: slideInRight;
+}
+

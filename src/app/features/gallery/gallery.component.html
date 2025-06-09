@@ -1,9 +1,9 @@
   <div class="container-fluid-xxl py-5">
     <div class="container-fluid">
-    <h2 class=" bg-white text-center text-danger mt-3">DEPARTMENT</h2>
+    <h2 class="bg-white text-center mt-3" style="color: maroon;">DEPARTMENT</h2>
       @for (gallery of listGallery; track $index) {
         <div class="text-center wow fadeInUp mt-4" data-wow-delay="0.1s">
-          <h5 class="section-title bg-white text-center text-primary px-3">{{gallery.name}}</h5>
+          <h5 class="section-title bg-white text-center px-3" style="color: maroon;">{{gallery.name}}</h5>
           <h6 class="mb-5">{{gallery.desc}}</h6>
         </div>
         <div class="row g-4">
@@ -18,11 +18,11 @@
           }
         </div>
       }
-      <h2 class=" bg-white text-center text-danger mt-3">Activities</h2>
+      <h2 class="bg-white text-center mt-3" style="color: maroon;">Activities</h2>
 
       @for (gallery of listEvents; track $index) {
         <div class="text-center wow fadeInUp mt-4" data-wow-delay="0.1s">
-          <h5 class="section-title bg-white text-center text-primary px-3">{{gallery.name}}</h5>
+          <h5 class="section-title bg-white text-center px-3" style="color: maroon;">{{gallery.name}}</h5>
         </div>
         <div class="row g-4">
           @for (images of gallery.imageUrls; track $index; let i = $index) {

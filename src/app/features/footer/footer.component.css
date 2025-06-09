@@ -72,7 +72,7 @@
 }
 
 .footer .btn-link:hover {
-  color: var(--primary);
+  color: maroon;
   padding-left: 0.5rem;
 }
 
@@ -94,8 +94,8 @@
 }
 
 .footer .btn-social:hover {
-  background-color: var(--primary);
-  border-color: var(--primary);
+  background-color: maroon;
+  border-color: maroon;
 }
 
 .footer .form-control {
@@ -134,7 +134,7 @@
 }
 
 .footer .footer-menu a:hover {
-  color: var(--primary);
+  color: maroon;
 }
 
 .footer .footer-menu span {
@@ -190,7 +190,7 @@
 
 /* Contact section specific styles */
 .footer .contact-info i {
-  color: var(--primary);
+  color: maroon;
   margin-right: 0.5rem;
 }
 

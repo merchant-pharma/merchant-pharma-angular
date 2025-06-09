@@ -1,19 +1,42 @@
-<div>
-    <h2 class="mb-4">Bachelor of Pharmacy (B.Pharm)</h2>
-    <p class="mb-4">A comprehensive undergraduate program in pharmaceutical sciences...</p>
+<div class="program-container">
+    <div class="program-header">
+        <h2 class="mb-4" style="color: maroon;">Bachelor of Pharmacy (B.Pharm)</h2>
+        <p class="mb-4">A comprehensive undergraduate program in pharmaceutical sciences that prepares students for a rewarding career in pharmacy and healthcare.</p>
+    </div>
 
-    <h5 class="mb-3">Course Duration</h5>
-    <p class="mb-3">{{ courseDuration }}</p>
+    <div class="program-details">
+        <div class="detail-section">
+            <h5 class="mb-3" style="color: maroon;">
+                <i class="fas fa-clock me-2" style="color: maroon;"></i>Course Duration
+            </h5>
+            <p class="mb-3">{{ courseDuration }}</p>
+        </div>
 
-    <h5 class="mb-3">Eligibility</h5>
-    <p class="mb-3">{{ eligibility }}</p>
+        <div class="detail-section">
+            <h5 class="mb-3" style="color: maroon;">
+                <i class="fas fa-user-graduate me-2" style="color: maroon;"></i>Eligibility
+            </h5>
+            <p class="mb-3">{{ eligibility }}</p>
+        </div>
 
-    <h5 class="mb-3">Curriculum Outline</h5>
-    <ul class="list-group mb-4">
-        @for (item of curriculumOutline; track $index) {
-        <li class="list-group-item">{{ item }}</li>
-        }
-    </ul>
+        <div class="detail-section">
+            <h5 class="mb-3" style="color: maroon;">
+                <i class="fas fa-book me-2" style="color: maroon;"></i>Curriculum Outline
+            </h5>
+            <ul class="list-group mb-4 curriculum-list">
+                @for (item of curriculumOutline; track $index) {
+                    <li class="list-group-item">
+                        <i class="fas fa-check-circle me-2" style="color: maroon;"></i>
+                        {{ item }}
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
 
-    <button class="btn btn-primary py-md-3 px-md-5" (click)="applyNow()">Apply Now</button>
+    <div class="program-cta">
+        <button class="btn btn-primary py-md-3 px-md-5" (click)="applyNow()" style="background-color: maroon; border-color: maroon;">
+            <i class="fas fa-paper-plane me-2"></i>Apply Now
+        </button>
+    </div>
 </div>

@@ -1,6 +1,6 @@
 .committee-item {
   transition: .5s;
-  box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+  box-shadow: 0 0 45px rgba(128, 0, 0, 0.07);
 }
 
 .committee-item:hover {
@@ -20,7 +20,7 @@
   width: 45px;
   height: 2px;
   top: 50%;
-  background: var(--primary);
+  background: maroon;
 }
 
 .section-title::before {
@@ -32,11 +32,11 @@
 }
 
 .bg-primary {
-  background-color: var(--primary) !important;
+  background-color: maroon !important;
 }
 
 .text-primary {
-  color: var(--primary) !important;
+  color: maroon !important;
 }
 
 .list-unstyled li {
@@ -46,7 +46,7 @@
 
 .list-unstyled li:hover {
   padding-left: 8px;
-  color: var(--primary);
+  color: maroon;
 }
 
 .list-unstyled li:hover i {

@@ -1,7 +1,7 @@
 <div class="container-xxl py-5">
   <div class="container">
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-      <h6 class="section-title bg-white text-center text-primary px-3">Awards & Recognition</h6>
+      <h6 class="section-title bg-white text-center px-3" style="color: maroon;">Awards & Recognition</h6>
       <h1 class="mb-5">Our Achievements</h1>
     </div>
 
@@ -11,12 +11,12 @@
         <div class="col-lg-3 col-md-6 wow fadeInUp" [attr.data-wow-delay]="0.1 * ($index + 1) + 's'">
           <div class="award-item bg-light rounded h-100 p-4">
             <div class="d-flex align-items-center mb-4">
-              <div class="award-icon bg-primary rounded-circle d-flex align-items-center justify-content-center">
+              <div class="award-icon rounded-circle d-flex align-items-center justify-content-center" style="background-color: maroon;">
                 <fa-icon [icon]="award.icon" class="text-white fs-4"></fa-icon>
               </div>
               <div class="ms-3">
                 <h5 class="mb-0">{{ award.title }}</h5>
-                <small class="text-primary">{{ award.year }}</small>
+                <small style="color: maroon;">{{ award.year }}</small>
               </div>
             </div>
             <p class="mb-0">{{ award.description }}</p>
@@ -30,7 +30,7 @@
       @for (achievement of achievements; track $index) {
         <div class="col-lg-3 col-md-6 wow fadeInUp" [attr.data-wow-delay]="0.1 * ($index + 1) + 's'">
           <div class="fact-item bg-light rounded text-center h-100 p-5">
-            <h1 class="display-2 text-primary mb-3">{{ achievement.figure }}</h1>
+            <h1 class="display-2 mb-3" style="color: maroon;">{{ achievement.figure }}</h1>
             <h5 class="mb-3">{{ achievement.label }}</h5>
           </div>
         </div>
