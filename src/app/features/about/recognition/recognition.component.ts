@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgwWowService } from 'ngx-wow';
 
 interface Recognition {
@@ -20,51 +21,45 @@ interface Approval {
 @Component({
   selector: 'app-recognition',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FontAwesomeModule],
   template: `
     <div class="container-xxl py-5">
       <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-          <h6 class="section-title bg-white text-center text-primary px-3">Recognition & Approvals</h6>
-          <h1 class="mb-5">Our Achievements & Accreditations</h1>
+          <h6 class="section-title bg-white text-center text-primary px-3" style="color: maroon;">Recognition & Approvals</h6>
+          <h1 class="mb-5">Our Accreditations</h1>
         </div>
 
-        <!-- Recognitions Section -->
         <div class="row g-4 mb-5">
           @for (recognition of recognitions; track $index) {
             <div class="col-lg-4 col-md-6 wow fadeInUp" [attr.data-wow-delay]="0.1 * ($index + 1) + 's'">
-              <div class="service-item rounded h-100 p-4">
-                <div class="d-flex align-items-center mb-4">
-                  <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                    <i class="{{ recognition.icon }} text-white fs-4"></i>
-                  </div>
+              <div class="recognition-item bg-light rounded p-4">
+                <div class="d-flex align-items-center mb-3">
+                  <i [class]="recognition.icon" style="color: maroon; font-size: 2rem;"></i>
                   <div class="ms-3">
-                    <h5 class="mb-0">{{ recognition.title }}</h5>
-                    <small class="text-muted">{{ recognition.year }}</small>
+                    <h5 class="mb-0" style="color: maroon;">{{ recognition.title }}</h5>
+                    <small class="text-muted">{{ recognition.authority }} ({{ recognition.year }})</small>
                   </div>
                 </div>
-                <p class="mb-2"><strong>Authority:</strong> {{ recognition.authority }}</p>
                 <p class="mb-0">{{ recognition.description }}</p>
               </div>
             </div>
           }
         </div>
 
-        <!-- Approvals Section -->
-        <div class="text-center wow fadeInUp mt-5" data-wow-delay="0.1s">
-          <h2 class="mb-5">Statutory Approvals</h2>
+        <div class="text-center wow fadeInUp" data-wow-delay="0.3s">
+          <h2 class="mb-5" style="color: maroon;">Current Approvals</h2>
         </div>
+
         <div class="row g-4">
           @for (approval of approvals; track $index) {
             <div class="col-lg-6 col-md-6 wow fadeInUp" [attr.data-wow-delay]="0.1 * ($index + 1) + 's'">
-              <div class="bg-light rounded p-4 h-100">
-                <div class="d-flex align-items-center mb-4">
-                  <div class="bg-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
-                    <i class="{{ approval.icon }} text-primary fs-4"></i>
-                  </div>
+              <div class="approval-item bg-light rounded p-4">
+                <div class="d-flex align-items-center mb-3">
+                  <i [class]="approval.icon" style="color: maroon; font-size: 2rem;"></i>
                   <div class="ms-3">
-                    <h5 class="mb-0">{{ approval.name }}</h5>
-                    <small class="text-muted">Validity: {{ approval.validityPeriod }}</small>
+                    <h5 class="mb-0" style="color: maroon;">{{ approval.name }}</h5>
+                    <small class="text-muted">Valid until: {{ approval.validityPeriod }}</small>
                   </div>
                 </div>
                 <p class="mb-0">{{ approval.description }}</p>
@@ -72,99 +67,121 @@ interface Approval {
             </div>
           }
         </div>
-
-        <!-- Quality Standards Section -->
-        <div class="row mt-5">
-          <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title mb-4">Quality Standards & Certifications</h4>
-                <div class="row g-4">
-                  @for (standard of qualityStandards; track $index) {
-                    <div class="col-md-6">
-                      <div class="d-flex align-items-start mb-3">
-                        <i class="fas fa-certificate text-primary me-2 mt-1"></i>
-                        <p class="mb-0">{{ standard }}</p>
-                      </div>
-                    </div>
-                  }
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   `,
   styles: [`
-    .service-item {
-      box-shadow: 0 0 45px rgba(0, 0, 0, .08);
-      transition: .5s;
+    .recognition-item, .approval-item {
+      border: 1px solid rgba(128, 0, 0, 0.2);
+      transition: all 0.3s ease;
     }
-    .service-item:hover {
-      transform: translateY(-10px);
+    .recognition-item:hover, .approval-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(128, 0, 0, 0.1);
+    }
+    i {
+      transition: transform 0.3s ease;
+    }
+    .recognition-item:hover i, .approval-item:hover i {
+      transform: scale(1.2);
+    }
+    .section-title {
+      position: relative;
+      display: inline-block;
+    }
+    .section-title::before {
+      position: absolute;
+      content: "";
+      width: 45px;
+      height: 2px;
+      top: 50%;
+      left: -55px;
+      margin-top: -1px;
+      background: maroon;
+    }
+    .section-title::after {
+      position: absolute;
+      content: "";
+      width: 45px;
+      height: 2px;
+      top: 50%;
+      right: -55px;
+      margin-top: -1px;
+      background: maroon;
     }
   `]
 })
 export class RecognitionComponent implements OnInit {
   recognitions: Recognition[] = [
     {
-      title: 'Excellence in Pharmacy Education',
-      authority: 'National Board of Accreditation',
-      year: '2023',
-      description: 'Recognized for outstanding contribution to pharmacy education and research.',
+      title: 'GTU Affiliation',
+      authority: 'Gujarat Technological University',
+      year: '2022',
+      description: 'Full affiliation for B.Pharm program with recognition for academic excellence and infrastructure standards',
       icon: 'fas fa-award'
     },
     {
-      title: 'Research Excellence',
-      authority: 'State Research Council',
+      title: 'PCI Approval',
+      authority: 'Pharmacy Council of India',
       year: '2022',
-      description: 'Awarded for significant contributions in pharmaceutical research.',
+      description: 'Approval for B.Pharm program with recognition of our state-of-the-art laboratories and qualified faculty',
+      icon: 'fas fa-certificate'
+    },
+    {
+      title: 'Merchant Charitable Trust',
+      authority: 'Gujarat State',
+      year: '2022',
+      description: 'Recognition as a premier pharmacy institution with focus on quality education and research',
+      icon: 'fas fa-medal'
+    },
+    {
+      title: 'Industry Collaboration',
+      authority: 'Pharmaceutical Industry',
+      year: '2023',
+      description: 'Partnerships with leading pharmaceutical companies for training and research',
+      icon: 'fas fa-handshake'
+    },
+    {
+      title: 'Research Excellence',
+      authority: 'GTU Research Center',
+      year: '2023',
+      description: 'Recognition for innovative research in pharmaceutical sciences',
       icon: 'fas fa-microscope'
     },
     {
-      title: 'Best Infrastructure',
-      authority: 'Education Excellence Awards',
-      year: '2022',
-      description: 'Recognized for state-of-the-art facilities and modern infrastructure.',
-      icon: 'fas fa-building'
+      title: 'Student Development',
+      authority: 'Gujarat State',
+      year: '2023',
+      description: 'Recognition for excellence in student development and placement',
+      icon: 'fas fa-user-graduate'
     }
   ];
 
   approvals: Approval[] = [
     {
-      name: 'Pharmacy Council of India (PCI)',
-      description: 'Approved for B.Pharm, M.Pharm, and Pharm.D programs with highest grade.',
-      validityPeriod: '2023-2028',
-      icon: 'fas fa-check-circle'
-    },
-    {
-      name: 'AICTE Approval',
-      description: 'All technical programs approved with excellent rating.',
-      validityPeriod: '2023-2024',
-      icon: 'fas fa-university'
-    },
-    {
-      name: 'UGC Recognition',
-      description: 'Recognized under Section 2(f) and 12(B) of UGC Act.',
-      validityPeriod: 'Permanent',
+      name: 'B.Pharm Program',
+      description: 'Approved by PCI and affiliated with GTU, offering comprehensive pharmaceutical education with modern curriculum and practical training',
+      validityPeriod: '2025',
       icon: 'fas fa-graduation-cap'
     },
     {
-      name: 'ISO Certification',
-      description: 'ISO 9001:2015 certified for quality management systems.',
-      validityPeriod: '2022-2025',
-      icon: 'fas fa-certificate'
+      name: 'Research Center',
+      description: 'Approved by GTU for pharmaceutical research with focus on drug development and formulation studies',
+      validityPeriod: '2025',
+      icon: 'fas fa-flask'
+    },
+    {
+      name: 'Laboratory Facilities',
+      description: 'Approved by PCI for practical training with modern equipment and safety standards',
+      validityPeriod: '2025',
+      icon: 'fas fa-vial'
+    },
+    {
+      name: 'Industry Training',
+      description: 'Approved collaboration with pharmaceutical industries for student internships and research projects',
+      validityPeriod: '2025',
+      icon: 'fas fa-industry'
     }
-  ];
-
-  qualityStandards: string[] = [
-    'WHO-GMP Compliance Certification',
-    'NABL Accredited Laboratories',
-    'NBA Accreditation for UG & PG Programs',
-    'NIRF Ranked Institution',
-    'NAAC "A" Grade Accreditation',
-    'DST-FIST Funded Research Facilities'
   ];
 
   constructor(private wowService: NgwWowService) {}

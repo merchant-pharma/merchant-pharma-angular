@@ -1,0 +1,109 @@
+.program-container {
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.program-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(128, 0, 0, 0.1);
+}
+
+.program-header h2 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.program-details {
+    margin-bottom: 2rem;
+}
+
+.detail-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    border-left: 4px solid maroon;
+    transition: transform 0.3s ease;
+}
+
+.detail-section:hover {
+    transform: translateX(10px);
+    box-shadow: 0 4px 15px rgba(128, 0, 0, 0.1);
+}
+
+.detail-section h5 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.detail-section h5 i {
+    transition: transform 0.3s ease;
+}
+
+.detail-section:hover h5 i {
+    transform: scale(1.2);
+}
+
+.curriculum-list {
+    border: 1px solid rgba(128, 0, 0, 0.2);
+}
+
+.curriculum-list .list-group-item {
+    border-color: rgba(128, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.curriculum-list .list-group-item:hover {
+    background-color: rgba(128, 0, 0, 0.05);
+    transform: translateX(5px);
+}
+
+.curriculum-list .list-group-item i {
+    transition: transform 0.3s ease;
+}
+
+.curriculum-list .list-group-item:hover i {
+    transform: scale(1.2);
+}
+
+.program-cta {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.program-cta .btn {
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.program-cta .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(128, 0, 0, 0.2);
+}
+
+.program-cta .btn i {
+    transition: transform 0.3s ease;
+}
+
+.program-cta .btn:hover i {
+    transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+    .program-container {
+        padding: 1rem;
+    }
+
+    .detail-section {
+        padding: 1rem;
+    }
+
+    .curriculum-list .list-group-item {
+        padding: 0.75rem;
+    }
+}

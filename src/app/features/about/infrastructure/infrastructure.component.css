@@ -1,6 +1,6 @@
 .facility-item {
   transition: .5s;
-  box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+  box-shadow: 0 0 45px rgba(128, 0, 0, 0.07);
 }
 
 .facility-item:hover {
@@ -30,7 +30,7 @@
   width: 45px;
   height: 2px;
   top: 50%;
-  background: var(--primary);
+  background: maroon;
 }
 
 .section-title::before {
@@ -65,7 +65,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, .5);
+  background: rgba(128, 0, 0, 0.5);
   opacity: 0;
   transition: .5s;
 }
@@ -85,9 +85,9 @@
 }
 
 .text-primary {
-  color: var(--primary) !important;
+  color: maroon !important;
 }
 
 .bg-primary {
-  background-color: var(--primary) !important;
+  background-color: maroon !important;
 } 

@@ -1,0 +1,139 @@
+.btn-primary {
+  background-color: maroon !important;
+  border-color: maroon !important;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #800000 !important;
+  border-color: #800000 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(128, 0, 0, 0.2);
+}
+
+.text-primary {
+  color: maroon !important;
+}
+
+.bg-primary {
+  background-color: maroon !important;
+}
+
+.card {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(128, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(128, 0, 0, 0.1);
+}
+
+.form-control:focus {
+  border-color: maroon;
+  box-shadow: 0 0 0 0.2rem rgba(128, 0, 0, 0.25);
+}
+
+.social-links {
+  gap: 1rem;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: maroon;
+  border: 2px solid maroon;
+  color: white;
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(128, 0, 0, 0.3);
+  background-color: white;
+  color: maroon;
+}
+
+.social-icon i {
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover i {
+  transform: scale(1.2);
+}
+
+/* Specific styles for each social media platform */
+.social-icon.facebook:hover {
+  background-color: #1877f2;
+  border-color: #1877f2;
+  color: white;
+}
+
+.social-icon.twitter:hover {
+  background-color: #1da1f2;
+  border-color: #1da1f2;
+  color: white;
+}
+
+.social-icon.instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-color: #dc2743;
+  color: white;
+}
+
+.social-icon.linkedin:hover {
+  background-color: #0077b5;
+  border-color: #0077b5;
+  color: white;
+}
+
+.social-icon.youtube:hover {
+  background-color: #ff0000;
+  border-color: #ff0000;
+  color: white;
+}
+
+.social-icon.whatsapp:hover {
+  background-color: #25d366;
+  border-color: #25d366;
+  color: white;
+}
+
+/* Add a subtle pulse animation on hover */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(128, 0, 0, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(128, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(128, 0, 0, 0);
+  }
+}
+
+.social-icon:hover {
+  animation: pulse 1.5s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .social-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .social-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+    margin: 0.5rem;
+  }
+}

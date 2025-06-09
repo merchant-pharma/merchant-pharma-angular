@@ -6,6 +6,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faMapMarkerAlt, faPhoneAlt, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 
+interface SocialLink {
+  iconClass: string;
+  url: string;
+  platform: string;
+}
+
 @Component({
   selector: 'app-contact-us',
   standalone: true,
@@ -34,11 +40,12 @@ export class ContactUsComponent implements OnInit {
     { name: 'Student Affairs', email: 'studentaffairs@merchantpharmacy.edu.in' }
   ];
 
-  socialLinks = [
-    { icon: 'fab fa-facebook-f', url: '#' },
-    { icon: 'fab fa-instagram', url: '#' },
-    { icon: 'fab fa-youtube', url: '#' },
-    { icon: 'fab fa-linkedin-in', url: '#' }
+  socialLinks: SocialLink[] = [
+    { iconClass: 'fab fa-whatsapp', url: 'https://wa.me/919723706169', platform: 'whatsapp' },
+    { iconClass: 'fab fa-facebook-f', url: '#', platform: 'facebook' },
+    { iconClass: 'fab fa-instagram', url: '#', platform: 'instagram' },
+    { iconClass: 'fab fa-youtube', url: '#', platform: 'youtube' },
+    { iconClass: 'fab fa-linkedin-in', url: '#', platform: 'linkedin' }
   ];
 
   formData = {

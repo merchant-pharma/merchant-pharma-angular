@@ -26,4 +26,113 @@
 :host > * {
   position: relative;
   z-index: 2;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.table {
+  border-color: maroon;
+}
+
+.table thead th {
+  border-color: maroon;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(128, 0, 0, 0.05);
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: rgba(128, 0, 0, 0.1);
+}
+
+.table-bordered td, .table-bordered th {
+  border-color: maroon;
+}
+
+.list-unstyled li {
+  transition: transform 0.3s ease;
+}
+
+.list-unstyled li:hover {
+  transform: translateX(10px);
+}
+
+.list-unstyled li i {
+  transition: transform 0.3s ease;
+}
+
+.list-unstyled li:hover i {
+  transform: scale(1.2);
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  border-left: 3px solid maroon;
+}
+
+.feature-item:hover {
+  transform: translateX(10px);
+  background-color: rgba(128, 0, 0, 0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item i {
+  font-size: 1.2em;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover i {
+  transform: scale(1.2);
+}
+
+.contact-info {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(128, 0, 0, 0.2);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateX(10px);
+}
+
+.contact-item i {
+  font-size: 1.2em;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.contact-item:hover i {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .table-responsive {
+    border-color: maroon;
+  }
+  
+  .feature-item, .contact-item {
+    padding: 8px 12px;
+  }
+  
+  .contact-info {
+    padding: 15px;
+  }
 } 

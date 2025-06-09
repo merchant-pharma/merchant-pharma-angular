@@ -77,7 +77,7 @@ export class GalleryComponent {
         'teach3.jpg',
         'teach4.jpg'
       ],
-      name:'Teacher’s day',
+      name:'Teacher\'s day',
       wowDelay: '0.1s'
     },
     {
@@ -85,7 +85,7 @@ export class GalleryComponent {
         'pharma1.jpg',
         'pharma2.jpg',
       ],
-      name:'Pharmacist’s day',
+      name:'Pharmacist\'s day',
        wowDelay: '0.3s'
     },
     {
