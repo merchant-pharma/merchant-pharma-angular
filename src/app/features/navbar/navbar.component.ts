@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NgbDropdownModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -52,10 +52,58 @@ import { RouterModule } from '@angular/router';
     }
 
     .programs-menu {
-      width: 600px;
+      width: 400px;
       max-height: 80vh;
       overflow-y: auto;
       overflow-x: hidden;
+    }
+
+    .program-card {
+      background: #fff;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .program-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .program-card .dropdown-item {
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+
+    .program-card .dropdown-item:hover {
+      background-color: rgba(128, 0, 0, 0.05);
+    }
+
+    .program-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(128, 0, 0, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+    }
+
+    .program-icon i {
+      font-size: 1.5rem;
+    }
+
+    .program-details h5 {
+      color: maroon;
+      font-weight: 600;
+    }
+
+    .program-details p {
+      font-size: 0.9rem;
+    }
+
+    .program-details small {
+      font-size: 0.8rem;
     }
 
     .programs-menu .dropdown-item {
@@ -112,6 +160,14 @@ import { RouterModule } from '@angular/router';
 
       .programs-menu .dropdown-item {
         padding: 8px 10px;
+      }
+
+      .program-card {
+        margin: 0.5rem 0;
+      }
+
+      .program-card .dropdown-item {
+        padding: 1rem;
       }
     }
     
@@ -173,4 +229,31 @@ export class NavbarComponent {
   faArrowRight = faArrowRight;
   faDna = faDna;
   navbarCollapsed = true;
+  activeDropdown: string | null = null;
+
+  toggleNavbar() {
+    this.navbarCollapsed = !this.navbarCollapsed;
+  }
+
+  toggleDropdown(event: Event, dropdownName: string) {
+    event.stopPropagation();
+    if (this.activeDropdown === dropdownName) {
+      this.activeDropdown = null;
+    } else {
+      this.activeDropdown = dropdownName;
+    }
+  }
+
+  closeNavbar() {
+    this.navbarCollapsed = true;
+    this.activeDropdown = null;
+  }
+
+  // Close dropdowns when clicking outside
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: Event) {
+    if (!(event.target as HTMLElement).closest('.dropdown')) {
+      this.activeDropdown = null;
+    }
+  }
 }

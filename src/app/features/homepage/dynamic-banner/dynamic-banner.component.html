@@ -1,30 +1,30 @@
-<owl-carousel-o [options]="customOptions" class="position-relative">
+<div class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
     @for (slide of slides; track $index) {
-      <ng-template carouselSlide>
-        <div class="position-relative">
-          <img class="img-fluid" [src]="slide.image" alt="{{ slide.title }}" style="width: 100%; object-fit: cover; max-height: 650px;">
-          <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
-            style="background: rgba(24, 29, 56, .7)">
-            <div class="container">
-              <div class="row justify-content-start">
-                <div class="col-sm-10 col-lg-8">
-                  <h5 class="text-uppercase mb-3 animated slideInDown" style="color: maroon;">
-                    {{ slide.subtitle }}
-                  </h5>
-                  <h1 class="display-3 text-white animated slideInDown">
-                    {{ slide.title }}
-                  </h1>
-                  <p class="fs-5 text-white mb-4 pb-2">
-                    {{ slide.description }}
-                  </p>
-                  <a href="" class="btn-maroon py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                  <a href="" class="btn py-md-3 px-md-5 animated slideInRight" 
-                     style="background-color: transparent; border: 2px solid maroon; color: maroon;">Join Now</a>
-                </div>
+      <div class="carousel-item" [class.active]="$index === 0">
+        <div class="carousel-caption">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8 col-md-10 col-sm-12 text-center">
+                <h1 class="display-4 text-white mb-3 animated slideInDown">{{ slide.title }}</h1>
+                <p class="fs-5 text-white mb-4 animated slideInDown">{{ slide.description }}</p>
+                <a [routerLink]="slide.buttonLink" class="btn btn-primary py-3 px-5 animated slideInDown" style="background-color: maroon; border-color: maroon;">
+                  {{ slide.buttonText }}<i class="fa fa-arrow-right ms-3"></i>
+                </a>
               </div>
             </div>
           </div>
         </div>
-      </ng-template>
+        <img [src]="slide.imageUrl" class="d-block w-100" [alt]="slide.title">
+      </div>
     }
-  </owl-carousel-o>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target=".carousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target=".carousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

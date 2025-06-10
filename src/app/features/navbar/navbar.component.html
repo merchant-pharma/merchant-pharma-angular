@@ -3,81 +3,89 @@
     <a routerLink="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
       <!-- <h2 class="m-0 text-primary">Merchant Pharmacy</h2> -->
       <img src="logo2.png" alt="Logo" style="width: 90px;">
-      <span  style="font-size: 20px; font-weight: bold;color: maroon;">Merchant Pharmacy</span>
+      <span class="d-none d-md-inline" style="font-size: 20px; font-weight: bold;color: maroon;">Merchant Pharmacy</span>
     </a>
-    <button type="button" class="navbar-toggler me-4" (click)="navbarCollapsed = !navbarCollapsed">
+    <button type="button" class="navbar-toggler me-4" (click)="toggleNavbar()">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" [class.show]="!navbarCollapsed">
       <div class="navbar-nav ms-auto p-4 p-lg-0">
         <!-- About Dropdown -->
-        <div class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color: maroon;">About</a>
-          <div class="dropdown-menu fade-down m-0 about-menu">
+        <div class="nav-item dropdown" (click)="toggleDropdown($event, 'about')">
+          <a class="nav-link dropdown-toggle" [class.show]="activeDropdown === 'about'" style="color: maroon;">About</a>
+          <div class="dropdown-menu fade-down m-0 about-menu" [class.show]="activeDropdown === 'about'">
             <div class="row p-3">
               <div class="col-md-4">
                 <h6 class="dropdown-header" style="color: maroon;">Know Our College</h6>
-                <a routerLink="/about" class="dropdown-item" style="color: maroon;">About College</a>
-                <a routerLink="/about/introduction-vision" class="dropdown-item" style="color: maroon;">Vision & Mission</a>
-                <a routerLink="/about/dean-message" class="dropdown-item" style="color: maroon;">Dean's Message</a>
-                <a routerLink="/about/history-milestones" class="dropdown-item" style="color: maroon;">History & Milestones</a>
-                <a routerLink="/about/recognition" class="dropdown-item" style="color: maroon;">Recognition & Approvals</a>
-                <a routerLink="/about/green-initiatives" class="dropdown-item" style="color: maroon;">Green Initiatives</a>
+                <a routerLink="/about" class="dropdown-item" style="color: maroon;" (click)="closeNavbar()">About College</a>
+                <a routerLink="/about/introduction-vision" class="dropdown-item" style="color: maroon;" (click)="closeNavbar()">Vision & Mission</a>
+                <a routerLink="/about/dean-message" class="dropdown-item" style="color: maroon;" (click)="closeNavbar()">Dean's Message</a>
+                <a routerLink="/about/history-milestones" class="dropdown-item" style="color: maroon;" (click)="closeNavbar()">History & Milestones</a>
+                <a routerLink="/about/recognition" class="dropdown-item" style="color: maroon;" (click)="closeNavbar()">Recognition & Approvals</a>
+                <a routerLink="/about/green-initiatives" class="dropdown-item" style="color: maroon;" (click)="closeNavbar()">Green Initiatives</a>
               </div>
               <div class="col-md-4">
                 <h6 class="dropdown-header" style="color: maroon;">Cells & Centers</h6>
-                <a routerLink="/about/research-development" class="dropdown-item" style="color: maroon;">Research & Development</a>
-                <a routerLink="/about/entrepreneurship" class="dropdown-item" style="color: maroon;">Entrepreneurship Cell</a>
-                <a routerLink="/about/skill-development" class="dropdown-item" style="color: maroon;">Skill Development</a>
-                <a routerLink="/about/iqac" class="dropdown-item" style="color: maroon;">IQAC</a>
-                <a routerLink="/about/grievance" class="dropdown-item" style="color: maroon;">Grievance Cell</a>
-                <a routerLink="/about/anti-ragging" class="dropdown-item" style="color: maroon;">Anti-Ragging Cell</a>
-                <a routerLink="/about/womens-cell" class="dropdown-item" style="color: maroon;">Women Development</a>
+                <a routerLink="/about/research-development" class="dropdown-item" style="color: maroon;" (click)="closeNavbar()">Research & Development</a>
+                <a routerLink="/about/entrepreneurship" class="dropdown-item" style="color: maroon;" (click)="closeNavbar()">Entrepreneurship Cell</a>
+                <a routerLink="/about/skill-development" class="dropdown-item" style="color: maroon;" (click)="closeNavbar()">Skill Development</a>
+                <a routerLink="/about/iqac" class="dropdown-item" style="color: maroon;" (click)="closeNavbar()">IQAC</a>
+                <a routerLink="/about/grievance" class="dropdown-item" style="color: maroon;" (click)="closeNavbar()">Grievance Cell</a>
+                <a routerLink="/about/anti-ragging" class="dropdown-item" style="color: maroon;" (click)="closeNavbar()">Anti-Ragging Cell</a>
+                <a routerLink="/about/womens-cell" class="dropdown-item" style="color: maroon;" (click)="closeNavbar()">Women Development</a>
               </div>
               <div class="col-md-4">
                 <h6 class="dropdown-header" style="color: maroon;">Governance & Leadership</h6>
-                <a routerLink="/about/governing-body" class="dropdown-item" style="color: maroon;">Governing Body</a>
-                <a routerLink="/about/academic-leadership" class="dropdown-item" style="color: maroon;">Academic Leadership</a>
-                <a routerLink="/about/committees" class="dropdown-item" style="color: maroon;">Committees</a>
-                <a routerLink="/about/staff-directory" class="dropdown-item" style="color: maroon;">Staff Directory</a>
+                <a routerLink="/about/governing-body" class="dropdown-item" style="color: maroon;" (click)="closeNavbar()">Governing Body</a>
+                <a routerLink="/about/academic-leadership" class="dropdown-item" style="color: maroon;" (click)="closeNavbar()">Academic Leadership</a>
+                <a routerLink="/about/committees" class="dropdown-item" style="color: maroon;" (click)="closeNavbar()">Committees</a>
+                <a routerLink="/about/staff-directory" class="dropdown-item" style="color: maroon;" (click)="closeNavbar()">Staff Directory</a>
               </div>
             </div>
           </div>
         </div>    
 
         <!-- Programs Dropdown -->
-        <div ngbDropdown class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" ngbDropdownToggle style="color: maroon;">Programs</a>
-          <div ngbDropdownMenu class="dropdown-menu fade-down m-0 programs-menu">
-            <div class="container p-3">
+        <div class="nav-item dropdown" (click)="toggleDropdown($event, 'programs')">
+          <a class="nav-link dropdown-toggle" [class.show]="activeDropdown === 'programs'" style="color: maroon;">Programs</a>
+          <div class="dropdown-menu fade-down m-0 programs-menu" [class.show]="activeDropdown === 'programs'">
+            <div class="container p-4">
               <div class="row">
-                <div class="col-md-3 mb-3">
-                  <h6 class="dropdown-header" style="color: maroon;">Undergraduate Programs</h6>
-                  <div class="ps-2">
-                    <a class="dropdown-item" routerLink="/departments/b-pharm" style="color: maroon;">
-                      <i class="fas fa-graduation-cap me-2" style="color: maroon;"></i>B.Pharm
-                      <small class="d-block text-muted">Bachelor of Pharmacy</small>
+                <div class="col-12">
+                  <h6 class="dropdown-header mb-3" style="color: maroon;">Undergraduate Programs</h6>
+                  <div class="program-card">
+                    <a class="dropdown-item" routerLink="/departments/b-pharm" style="color: maroon;" (click)="closeNavbar()">
+                      <div class="d-flex align-items-center">
+                        <div class="program-icon">
+                          <i class="fas fa-graduation-cap" style="color: maroon;"></i>
+                        </div>
+                        <div class="program-details">
+                          <h5 class="mb-1">B.Pharm</h5>
+                          <p class="mb-0 text-muted">Bachelor of Pharmacy</p>
+                          <small class="text-muted">Duration: 4 Years</small>
+                        </div>
+                      </div>
                     </a>
                   </div>
-                </div>             
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Campus Life -->
-        <div ngbDropdown class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" ngbDropdownToggle style="color: maroon;">Campus</a>
-          <div ngbDropdownMenu class="dropdown-menu fade-down m-0">
+        <div class="nav-item dropdown" (click)="toggleDropdown($event, 'campus')">
+          <a class="nav-link dropdown-toggle" [class.show]="activeDropdown === 'campus'" style="color: maroon;">Campus</a>
+          <div class="dropdown-menu fade-down m-0" [class.show]="activeDropdown === 'campus'">
             <div class="p-3">            
               <h6 class="dropdown-header mt-3" style="color: maroon;">Facilities</h6>
-              <a class="dropdown-item" routerLink="/transportation" style="color: maroon;">Transportation</a>
+              <a class="dropdown-item" routerLink="/transportation" style="color: maroon;" (click)="closeNavbar()">Transportation</a>
             </div>
           </div>
         </div>
-        <a routerLink="/research" class="nav-item nav-link" style="color: maroon;">Research</a>
-        <a routerLink="/gallery" class="nav-item nav-link" style="color: maroon;">Gallery</a>
-        <a routerLink="/contact" class="nav-item nav-link" style="color: maroon;">Contact</a>
+        <a routerLink="/research" class="nav-item nav-link" style="color: maroon;" (click)="closeNavbar()">Research</a>
+        <a routerLink="/gallery" class="nav-item nav-link" style="color: maroon;" (click)="closeNavbar()">Gallery</a>
+        <a routerLink="/contact" class="nav-item nav-link" style="color: maroon;" (click)="closeNavbar()">Contact</a>
       </div>
       
       <!-- Admission CTA Button -->
