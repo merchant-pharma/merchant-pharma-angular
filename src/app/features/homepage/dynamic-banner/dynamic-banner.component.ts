@@ -24,7 +24,7 @@ interface Slide {
     }
 
     .banner-slide {
-      height: 800px;
+      height: 650px;
     }
 
     .banner-grid {
@@ -220,7 +220,7 @@ interface Slide {
       }
 
       .banner-image {
-        height: 500px;
+        height: 400px;
       }
 
       .banner-content {
@@ -238,7 +238,7 @@ interface Slide {
 
     @media (max-width: 576px) {
       .banner-image {
-        height: 400px;
+        height: 350px;
       }
 
       .banner-content {
