@@ -24,7 +24,9 @@ interface Slide {
     }
 
     .banner-slide {
-      height: 650px;
+      height: 70vh;
+      min-height: 500px;
+      max-height: 700px;
     }
 
     .banner-grid {
@@ -55,7 +57,7 @@ interface Slide {
     .banner-content {
       display: flex;
       align-items: center;
-      padding: 3rem;
+      padding: 5%;
       position: relative;
       overflow: hidden;
       height: 100%;
@@ -217,14 +219,16 @@ interface Slide {
 
       .banner-slide {
         height: auto;
+        min-height: 450px;
       }
 
       .banner-image {
-        height: 400px;
+        height: 50vh;
+        min-height: 350px;
       }
 
       .banner-content {
-        padding: 2.5rem 1.5rem;
+        padding: 4% 3%;
       }
 
       .content-wrapper {
@@ -237,12 +241,17 @@ interface Slide {
     }
 
     @media (max-width: 576px) {
+      .banner-slide {
+        min-height: 400px;
+      }
+
       .banner-image {
-        height: 350px;
+        height: 40vh;
+        min-height: 300px;
       }
 
       .banner-content {
-        padding: 2rem 1rem;
+        padding: 3% 2%;
       }
 
       .banner-title {
