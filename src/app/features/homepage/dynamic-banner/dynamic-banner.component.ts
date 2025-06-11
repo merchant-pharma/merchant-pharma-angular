@@ -18,89 +18,253 @@ interface Slide {
   imports: [CommonModule, RouterModule, CarouselModule],
   templateUrl: './dynamic-banner.component.html',
   styles: [`
-    .carousel-item {
-      position: relative;
-      height: 100vh;
-      min-height: 500px;
-      max-height: 800px;
+    .banner-container {
+      width: 100%;
+      overflow: hidden;
     }
 
-    .carousel-item img {
+    .banner-slide {
+      height: 800px;
+    }
+
+    .banner-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      height: 100%;
+      background: #fff;
+    }
+
+    .banner-image {
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .banner-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
+      transition: transform 0.5s ease;
     }
 
-    .carousel-caption {
+    .banner-slide:hover .banner-image img {
+      transform: scale(1.05);
+    }
+
+    .banner-content {
+      display: flex;
+      align-items: center;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .content-background {
       position: absolute;
       top: 0;
       left: 0;
-      right: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .blur-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(20px) brightness(0.7);
+      transform: scale(1.1);
+      transition: all 0.5s ease;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%);
+      backdrop-filter: blur(5px);
+    }
+
+    .content-wrapper {
+      max-width: 90%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .content-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: maroon;
+      color: white;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .banner-title {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    .title-line {
+      position: absolute;
+      left: 0;
+      top: 0;
       bottom: 0;
+      width: 4px;
+      background: maroon;
+      border-radius: 2px;
+    }
+
+    .banner-description {
+      font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+      color: #495057;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    .banner-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .feature-item {
       display: flex;
       align-items: center;
-      justify-content: center;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 20px;
-    }
-
-    .carousel-caption h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 700;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    .carousel-caption p {
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      margin-bottom: 2rem;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    }
-
-    .carousel-caption .btn {
-      font-size: clamp(0.875rem, 1.5vw, 1rem);
-      padding: 0.75rem 1.5rem;
+      gap: 0.75rem;
+      color: #495057;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 0.75rem;
       border-radius: 4px;
+      backdrop-filter: blur(5px);
+    }
+
+    .feature-item i {
+      color: maroon;
+      font-size: 1.2rem;
+    }
+
+    .banner-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      background-color: maroon;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 1.1rem;
       transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    .carousel-caption .btn:hover {
+    .banner-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: 0.5s;
+    }
+
+    .banner-button:hover::before {
+      left: 100%;
+    }
+
+    .banner-button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      color: white;
     }
 
-    @media (max-width: 768px) {
-      .carousel-item {
-        height: 70vh;
-        min-height: 400px;
+    .banner-button i {
+      transition: transform 0.3s ease;
+      font-size: 1.2rem;
+    }
+
+    .banner-button:hover i {
+      transform: translateX(4px);
+    }
+
+    @media (max-width: 991px) {
+      .banner-grid {
+        grid-template-columns: 1fr;
       }
 
-      .carousel-caption {
-        padding: 15px;
+      .banner-slide {
+        height: auto;
       }
 
-      .carousel-caption .container {
-        padding: 0 15px;
+      .banner-image {
+        height: 500px;
+      }
+
+      .banner-content {
+        padding: 2.5rem 1.5rem;
+      }
+
+      .content-wrapper {
+        max-width: 100%;
+      }
+
+      .banner-features {
+        grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 576px) {
-      .carousel-item {
-        height: 60vh;
-        min-height: 350px;
+      .banner-image {
+        height: 400px;
       }
 
-      .carousel-caption h1 {
-        margin-bottom: 0.5rem;
+      .banner-content {
+        padding: 2rem 1rem;
       }
 
-      .carousel-caption p {
-        margin-bottom: 1rem;
+      .banner-title {
+        font-size: 1.75rem;
       }
 
-      .carousel-caption .btn {
-        padding: 0.5rem 1rem;
+      .banner-description {
+        font-size: 1.1rem;
+      }
+
+      .content-badge {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+      }
+
+      .feature-item {
+        padding: 0.5rem;
+      }
+
+      .banner-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
       }
     }
   `]

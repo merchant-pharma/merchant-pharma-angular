@@ -1,30 +1,46 @@
-<div class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
+<div class="banner-container">
+  <owl-carousel-o [options]="customOptions" #owlCarousel>
     @for (slide of slides; track $index) {
-      <div class="carousel-item" [class.active]="$index === 0">
-        <div class="carousel-caption">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8 col-md-10 col-sm-12 text-center">
-                <h1 class="display-4 text-white mb-3 animated slideInDown">{{ slide.title }}</h1>
-                <p class="fs-5 text-white mb-4 animated slideInDown">{{ slide.description }}</p>
-                <a [routerLink]="slide.buttonLink" class="btn btn-primary py-3 px-5 animated slideInDown" style="background-color: maroon; border-color: maroon;">
-                  {{ slide.buttonText }}<i class="fa fa-arrow-right ms-3"></i>
+      <ng-template carouselSlide>
+        <div class="banner-slide">
+          <div class="banner-grid">
+            <!-- Image Section -->
+            <div class="banner-image">
+              <img [src]="slide.imageUrl" [alt]="slide.title" loading="lazy">
+            </div>
+            
+            <!-- Content Section -->
+            <div class="banner-content">
+              <div class="content-background">
+                <img [src]="slide.imageUrl" [alt]="slide.title" class="blur-bg">
+                <div class="overlay"></div>
+              </div>
+              <div class="content-wrapper">
+                <div class="content-badge">Featured</div>
+                <h2 class="banner-title">
+                  <span class="title-line"></span>
+                  {{ slide.title }}
+                </h2>
+                <p class="banner-description">{{ slide.description }}</p>
+                <div class="banner-features">
+                  <div class="feature-item">
+                    <i class="fa fa-check-circle"></i>
+                    <span>Quality Education</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fa fa-check-circle"></i>
+                    <span>Expert Faculty</span>
+                  </div>
+                </div>
+                <a [routerLink]="slide.buttonLink" class="banner-button">
+                  {{ slide.buttonText }}
+                  <i class="fa fa-arrow-right"></i>
                 </a>
               </div>
             </div>
           </div>
         </div>
-        <img [src]="slide.imageUrl" class="d-block w-100" [alt]="slide.title">
-      </div>
+      </ng-template>
     }
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target=".carousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target=".carousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+  </owl-carousel-o>
 </div>
