@@ -236,7 +236,7 @@
   }
 
   .navbar-logo {
-    width: 40px;
+    width: 32px;
   }
 }
 
@@ -248,12 +248,12 @@
 
 @media (max-width: 991.98px) {
   .navbar-logo {
-    width: 60px;
+    width: 32px;
   }
 }
 
 @media (max-width: 575.98px) {
   .navbar-logo {
-    width: 20px;
+    width: 16px;
   }
 }
