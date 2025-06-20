@@ -234,4 +234,26 @@
   .programs-menu {
     min-width: 100%;
   }
+
+  .navbar-logo {
+    width: 40px;
+  }
+}
+
+.navbar-logo {
+  width: 90px;
+  height: auto;
+  transition: width 0.3s;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-logo {
+    width: 60px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .navbar-logo {
+    width: 20px;
+  }
 }

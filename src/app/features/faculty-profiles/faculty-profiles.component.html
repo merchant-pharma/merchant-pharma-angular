@@ -85,13 +85,8 @@
                 @for (faculty of faculties$ | async; track faculty.id) {
                   <tr>
                     <td>
-                      <div class="d-flex align-items-center">
-                        <img [src]="'img/team-' + (faculty.id % 4 + 1) + '.jpg'"
-                             alt="{{ faculty.name }}"
-                             width="40" height="40"
-                             class="rounded-circle me-2 border border-2 border-primary" />
-                        <span>{{ faculty.name }}</span>
-                      </div>
+                      <span class="faculty-initials bg-maroon text-white rounded-circle me-2">{{ faculty.name.charAt(0) }}</span>
+                      <span>{{ faculty.name }}</span>
                     </td>
                     <td>{{ faculty.designation }}</td>
                     <td>{{ faculty.specialization }}</td>
@@ -117,3 +112,26 @@
     </div>
   </div>
 </div>
+
+<style>
+  .faculty-initials {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: #800000;
+    color: #fff;
+    margin-right: 8px;
+    box-shadow: 0 2px 8px rgba(128,0,0,0.08);
+  }
+  .table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: rgba(128,0,0,0.03);
+  }
+  .table-hover>tbody>tr:hover {
+    background-color: rgba(128,0,0,0.08);
+    transition: background-color 0.3s;
+  }
+</style>

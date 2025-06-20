@@ -12,8 +12,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 })
 export class DeanDirectorMessageComponent implements OnInit {
   deanMessage = {
-    intro: 'Welcome to Merchant Pharmacy College, Mehsana - A center of excellence in pharmaceutical education.',
-    body: `As the Principal of Merchant Pharmacy College, I am proud to lead an institution that combines academic excellence with practical learning. Our college, established in 2022, is committed to nurturing future pharmacists who will contribute significantly to healthcare advancement in Gujarat and beyond.
+    intro: 'Welcome to Merchant Pharmacy College, Basana, Mehsana, Gujarat - A center of excellence in pharmaceutical education.',
+    body: `As the Principal of Merchant Pharmacy College, Basana, Mehsana, Gujarat, I am proud to lead an institution that combines academic excellence with practical learning. Our college, established in 2022, is committed to nurturing future pharmacists who will contribute significantly to healthcare advancement in Gujarat and beyond.
            We focus on providing quality education through modern teaching methodologies, state-of-the-art laboratories, and strong industry connections. Our faculty members are dedicated to mentoring students and fostering innovation in pharmaceutical sciences.
            At Merchant Pharmacy College, we believe in holistic development, combining theoretical knowledge with practical skills, research opportunities, and industry exposure. Our goal is to produce competent pharmacists who are ready to meet the challenges of the healthcare sector.`,
     name: 'Dr. Rajesh Patel'

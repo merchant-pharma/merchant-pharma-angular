@@ -37,7 +37,7 @@ interface EventNewsItem {
                   <p class="text-muted mb-2"><fa-icon [icon]="faCalendarAlt" class="me-2"></fa-icon>{{ item.date }}</p>
                   <p class="mb-0">{{ item.description }}</p>
                   @if (item.link) {
-                    <a [routerLink]="[item.link]" class="read-more-link mt-2">Read More <i class="fa fa-arrow-right ms-2"></i></a>
+                    
                   }
                 </div>
               </div>

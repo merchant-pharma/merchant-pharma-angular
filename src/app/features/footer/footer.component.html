@@ -14,7 +14,7 @@
           <p class="mb-2"><i class="fa fa-envelope me-3"></i>{{ contactInfo.email }}</p>
           <div class="d-flex pt-2">
             @for (social of socialLinks; track $index) {
-              <a class="btn btn-outline-light btn-social" [href]="social.url"><i class="{{ social.iconClass }}"></i></a>
+              <a class="btn btn-outline-light btn-social" [href]="social.url" target="_blank" rel="noopener noreferrer"><i class="{{ social.iconClass }}"></i></a>
             }
           </div>
         </div>        
@@ -35,14 +35,14 @@
             &copy; {{ siteName }}, All Rights Reserved.
           </div>
           <div class="col-md-6 text-center text-md-end">
-            <div class="footer-menu">
+            <!-- <div class="footer-menu">
               @for (link of footerMenuLinks; track $index) {
                 <a [routerLink]="link.routerLink">{{ link.label }}</a>
                 @if (!$last) {
                   <span>&nbsp;|&nbsp;</span>
                 }
               }
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

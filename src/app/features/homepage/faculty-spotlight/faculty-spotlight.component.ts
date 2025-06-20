@@ -14,7 +14,6 @@ interface FacultyMember {
   name: string;
   designation: string;
   specialization: string;
-  image: string;
   email: string;
   phone: string;
   researchLink?: string;
@@ -36,13 +35,17 @@ interface FacultyMember {
             <div class="col-lg-4 col-md-6 wow fadeInUp" [attr.data-wow-delay]="(i * 0.2 + 0.1) + 's'">
               <div class="faculty-card card h-100 rounded-lg text-center">
                 <div class="card-body d-flex flex-column align-items-center">
-                  <img class="img-fluid rounded-circle mb-3" [src]="faculty.image" [alt]="faculty.name">
+                  <div class="faculty-initials-circle mb-3">{{ faculty.name.charAt(0) }}</div>
                   <h5 class="mb-1">{{ faculty.name }}</h5>
                   <p class="text-maroon fw-bold mb-2">{{ faculty.designation }}</p>
                   <p class="text-muted mb-3">{{ faculty.specialization }}</p>
                   <div class="contact-info mb-4">
-                    <a [href]="'mailto:' + faculty.email" class="d-block text-maroon"><fa-icon [icon]="faEnvelope" class="me-2"></fa-icon>{{ faculty.email }}</a>
-                    <a [href]="'tel:' + faculty.phone" class="d-block text-maroon"><fa-icon [icon]="faPhone" class="me-2"></fa-icon>{{ faculty.phone }}</a>
+                    @if (faculty.email) {
+                      <a [href]="'mailto:' + faculty.email" class="d-block text-maroon"><fa-icon [icon]="faEnvelope" class="me-2"></fa-icon>{{ faculty.email }}</a>
+                    }
+                    @if (faculty.phone) {
+                      <a [href]="'tel:' + faculty.phone" class="d-block text-maroon"><fa-icon [icon]="faPhone" class="me-2"></fa-icon>{{ faculty.phone }}</a>
+                    }
                   </div>
                   @if (faculty.researchLink) {
                     <div class="mt-auto">
@@ -138,6 +141,21 @@ interface FacultyMember {
       background-color: var(--maroon-dark);
       border-color: var(--maroon-dark);
     }
+
+    .faculty-initials-circle {
+      width: 120px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #800000;
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: bold;
+      border-radius: 50%;
+      margin: 0 auto 1rem auto;
+      box-shadow: 0 2px 8px rgba(128,0,0,0.10);
+    }
   `]
 })
 export class FacultySpotlightComponent implements OnInit {
@@ -147,42 +165,23 @@ export class FacultySpotlightComponent implements OnInit {
   faUserTie = faUserTie;
 
   facultyMembers: FacultyMember[] = [
-    {
-      name: 'Dr. Rajesh Patel',
-      designation: 'Principal & Professor',
-      specialization: 'Pharmaceutical Chemistry, Drug Design',
-      image: 'assets/img/faculty-1.jpg',
-      email: 'rajesh.patel@mpcollege.org',
-      phone: '+91 98765 43210',
-      researchLink: '/faculty/rajesh-patel'
-    },
-    {
-      name: 'Dr. Priya Sharma',
-      designation: 'Head of Department, Pharmacology',
-      specialization: 'Pharmacology, Clinical Research',
-      image: 'assets/img/faculty-2.jpg',
-      email: 'priya.sharma@mpcollege.org',
-      phone: '+91 91234 56789',
-      researchLink: '/faculty/priya-sharma'
-    },
-    {
-      name: 'Dr. Amit Desai',
-      designation: 'Professor, Pharmaceutics',
-      specialization: 'Formulation Development, Nanotechnology',
-      image: 'assets/img/faculty-3.jpg',
-      email: 'amit.desai@mpcollege.org',
-      phone: '+91 90123 45678',
-      researchLink: '/faculty/amit-desai'
-    },
-    {
-      name: 'Dr. Neha Singh',
-      designation: 'Associate Professor, Pharmacognosy',
-      specialization: 'Herbal Drug Technology, Natural Products',
-      image: 'assets/img/faculty-4.jpg',
-      email: 'neha.singh@mpcollege.org',
-      phone: '+91 99887 76655',
-      researchLink: '/faculty/neha-singh'
-    }
+    { name: 'Dr. Laxman Prajapati', designation: 'Principal', specialization: '', email: 'laxchem@rediffmail.com', phone: '9427340043' },
+    { name: 'Dr. Bhoomi M. Patel', designation: 'Associate Professor', specialization: '', email: 'bhoomi16692@gmail.com', phone: '8460474756' },
+    { name: 'Patel Khushbu V.', designation: 'Assistant Professor', specialization: '', email: 'khushbuv4979@gmail.com', phone: '9714760662' },
+    { name: 'Patel Mit Jitendrakumar', designation: 'Assistant Professor', specialization: '', email: 'mit444p@gmail.com', phone: '9727193410' },
+    { name: 'Patel Kunjan Harshdbhai', designation: 'Assistant Professor', specialization: '', email: 'kunjanpatel6944@gmail.com', phone: '9586281205' },
+    { name: 'Patel Ruchitkumar Vishnubhai', designation: 'Assistant Professor', specialization: '', email: 'ruchitpatel316@gmail.com', phone: '9974155132' },
+    { name: 'Patel Riya Pareshkumar', designation: 'Assistant Professor', specialization: '', email: 'riyapatel6336@gmail.com', phone: '9265223007' },
+    { name: 'Patel Kena Gauravbhai', designation: 'Assistant Professor', specialization: '', email: '', phone: '9537674637' },
+    { name: 'Ravi M. Pethani', designation: 'Assistant Professor', specialization: '', email: 'ravipethani1776@gmail.com', phone: '7984402132' },
+    { name: 'Jayswal J. Parth', designation: 'Assistant Professor', specialization: '', email: 'parthjayswal0645@gmail.com', phone: '9327833287' },
+    { name: 'Kushal A. Saini', designation: 'Assistant Professor', specialization: '', email: 'sainikushal87@gmail.com', phone: '9427672857' },
+    { name: 'Patel Mosam P.', designation: 'Assistant Professor', specialization: '', email: 'mosampatel2112@gmail.com', phone: '' },
+    { name: 'Prajapati Dhruv S.', designation: 'Assistant Professor', specialization: '', email: 'dhruvprajapati6650@gmail.com', phone: '' },
+    { name: 'Patel Happykumar R.', designation: 'Assistant Professor', specialization: '', email: 'happypatel3570@gamil.com', phone: '' },
+    { name: 'Patel Meshva R.', designation: 'Assistant Professor', specialization: '', email: 'patelmeshva99@gmail.com', phone: '' },
+    { name: 'Patel Yash', designation: 'Assistant Professor', specialization: '', email: 'yashpatel9756@gmail.com', phone: '' },
+    { name: 'Patel Naiya', designation: 'Assistant Professor', specialization: '', email: 'naiyapatel4841@gmail.com', phone: '' }
   ];
 
   constructor(private wowService: NgwWowService) { }
