@@ -236,7 +236,10 @@
   }
 
   .navbar-logo {
-    width: 24px;
+    width: 20px;
+    height: auto;
+    object-fit: contain;
+    vertical-align: middle;
   }
 }
 
@@ -248,12 +251,18 @@
 
 @media (max-width: 991.98px) {
   .navbar-logo {
-    width: 24px;
+    width: 20px;
+    height: auto;
+    object-fit: contain;
+    vertical-align: middle;
   }
 }
 
 @media (max-width: 575.98px) {
   .navbar-logo {
-    width: 10px;
+    width: 14px;
+    height: auto;
+    object-fit: contain;
+    vertical-align: middle;
   }
 }
