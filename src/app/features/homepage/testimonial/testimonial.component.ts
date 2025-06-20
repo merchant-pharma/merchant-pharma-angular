@@ -29,7 +29,7 @@ interface Testimonial {
               <div class="testimonial-item card h-100 rounded-lg">
                 <div class="card-body d-flex flex-column">
                   <div class="d-flex align-items-center mb-4">
-                    <img class="img-fluid rounded-circle me-3" [src]="testimonial.image" [alt]="testimonial.name">
+                    <div class="faculty-initials-circle me-3">{{ testimonial.name.charAt(0) }}</div>
                     <div class="flex-grow-1">
                       <h5 class="mb-1">{{ testimonial.name }}</h5>
                       <span>{{ testimonial.position }}</span>
@@ -128,6 +128,21 @@ interface Testimonial {
 
     .testimonial-item small {
       color: #777;
+    }
+
+    .faculty-initials-circle {
+      width: 90px;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #800000;
+      color: #fff;
+      font-size: 2rem;
+      font-weight: bold;
+      border-radius: 50%;
+      margin-right: 1rem;
+      box-shadow: 0 2px 8px rgba(128,0,0,0.10);
     }
   `]
 })

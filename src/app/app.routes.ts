@@ -3,15 +3,12 @@ import { HomepageComponent } from './features/homepage/homepage.component';
 import { AboutComponent } from './features/about/about.component';
 import { TestimonialComponent } from './features/testimonial/testimonial.component';
 import { ContactUsComponent } from './features/contact-us/contact-us.component';
-import { PopularCoursesComponent } from './features/popular-courses/popular-courses.component';
 import { IntroductionVisionComponent } from './features/about/about-faculty-college/introduction-vision/introduction-vision.component';
 import { DeanDirectorMessageComponent } from './features/about/about-faculty-college/dean-director-message/dean-director-message.component';
 import { HistoryMilestonesComponent } from './features/about/about-faculty-college/history-milestones/history-milestones.component';
 import { DepartmentsProgramsComponent } from './features/departments-programs/departments-programs.component';
 import { BPharmComponent } from './features/departments-programs/b-pharm/b-pharm.component';
-import { MPharmComponent } from './features/departments-programs/m-pharm/m-pharm.component';
 import { PharmDComponent } from './features/departments-programs/pharm-d/pharm-d.component';
-import { PhdPharmacyComponent } from './features/departments-programs/phd-pharmacy/phd-pharmacy.component';
 import { FacultyProfilesComponent } from './features/faculty-profiles/faculty-profiles.component';
 import { FacultyProfileDetailsComponent } from './features/faculty-profile-details/faculty-profile-details.component';
 import { GalleryComponent } from './features/gallery/gallery.component';
@@ -31,7 +28,6 @@ import { IqacComponent } from './features/about/iqac/iqac.component';
 import { GrievanceRedressalComponent } from './features/about/grievance-redressal/grievance-redressal.component';
 import { AntiRaggingComponent } from './features/about/anti-ragging/anti-ragging.component';
 import { WomensDevelopmentComponent } from './features/about/womens-development/womens-development.component';
-import { StaffDirectoryComponent } from './features/about/staff-directory/staff-directory.component';
 import { TransportationComponent } from './features/transportation/transportation.component';
 
 export const routes: Routes = [
@@ -55,8 +51,7 @@ export const routes: Routes = [
           { path: 'womens-cell', component: WomensDevelopmentComponent },
           { path: 'governing-body', component: GoverningBodyComponent },
           { path: 'academic-leadership', component: AcademicLeadershipComponent },
-          { path: 'committees', component: CommitteesComponent },
-          { path: 'staff-directory', component: StaffDirectoryComponent }
+          { path: 'committees', component: CommitteesComponent }
         ]
     },
     {
@@ -64,18 +59,15 @@ export const routes: Routes = [
       component: DepartmentsProgramsComponent,
       children: [
         { path: 'b-pharm', component: BPharmComponent },
-        { path: 'm-pharm', component: MPharmComponent },
         { path: 'pharm-d', component: PharmDComponent },
-        { path: 'phd-pharmacy', component: PhdPharmacyComponent },
         { path: '', redirectTo: 'b-pharm', pathMatch: 'full' }
       ]
     },
     { path: 'testimonial', component: TestimonialComponent },
-    { path: 'courses', component: PopularCoursesComponent },
     { path: 'contact', component: ContactUsComponent },
     { path: 'faculty', component: FacultyProfilesComponent },
     { path: 'gallery', component: GalleryComponent },
-    { path: 'faculty/:id', component: FacultyProfileDetailsComponent },
+    { path: 'faculty', component: FacultyProfileDetailsComponent },
     { path: 'nss', component: NssComponent },
     { path: 'clubs', component: StudentClubsComponent },
     { path: 'research', component: ResearchComponent },

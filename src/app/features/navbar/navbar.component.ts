@@ -10,8 +10,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-navbar',
   standalone: true,
   imports: [
-    RouterLink, 
-    RouterLinkActive, 
+    RouterLink,
     NgbDropdownModule, 
     NgbCollapseModule,
     FontAwesomeModule, 

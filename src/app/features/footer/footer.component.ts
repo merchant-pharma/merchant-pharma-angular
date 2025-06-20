@@ -29,9 +29,7 @@ export class FooterComponent implements OnInit {
   quickLinks: QuickLink[] = [
     { label: 'About College', routerLink: '/about' },
     { label: 'Contact Us', routerLink: '/contact' },
-    { label: 'Admission', routerLink: '/admission' },
-    { label: 'Departments', routerLink: '/departments' },
-    { label: 'Infrastructure', routerLink: '/infrastructure' }
+    { label: 'Departments', routerLink: '/departments' }
   ];
 
   galleryImages: GalleryImage[] = [
@@ -45,9 +43,9 @@ export class FooterComponent implements OnInit {
 
   socialLinks: SocialLink[] = [
     { iconClass: 'fab fa-whatsapp', url: 'https://wa.me/919723706169' },
-    { iconClass: 'fab fa-facebook-f', url: '#' },
-    { iconClass: 'fab fa-instagram', url: '#' },
-    { iconClass: 'fab fa-youtube', url: '#' },
+    { iconClass: 'fab fa-facebook-f', url: 'https://www.facebook.com/merchantayurved/' },
+    { iconClass: 'fab fa-instagram', url: 'https://www.instagram.com/_merchant_campus?igsh=d3V4aHZ2ZGY2b2s2' },
+    { iconClass: 'fab fa-youtube', url: 'https://www.youtube.com/@merchanteducationcampus8683' },
     { iconClass: 'fab fa-linkedin-in', url: '#' }
   ];
 
@@ -55,13 +53,12 @@ export class FooterComponent implements OnInit {
 
   footerMenuLinks: QuickLink[] = [
     { label: 'Home', routerLink: '/' },
-    { label: 'Courses', routerLink: '/courses' },
     { label: 'Faculty', routerLink: '/faculty' },
     { label: 'Gallery', routerLink: '/gallery' }
   ];
 
   contactInfo = {
-    address: 'Merchant Pharmacy College, Mehsana, Gujarat, India',
+    address: 'No 9, JCQW+XW9 Radhe Vijay Garden, Basana College Campus, Basna, Chitrodipura, Gujarat 384001',
     phone: '+91 97237 06169',
     email: 'info@merchantpharmacy.edu.in'
   };

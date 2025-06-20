@@ -25,7 +25,7 @@ export class ContactUsComponent implements OnInit {
   faEnvelopeOpen = faEnvelopeOpen;
 
   contactInfo = {
-    address: 'Merchant Pharmacy College, Mehsana, Gujarat, India',
+    address: 'Merchant Education Campus, Basna, Mehsana, Gujarat, India',
     phone: '+91 97237 06169',
     email: 'info@merchantpharmacy.edu.in',
     workingHours: 'Monday - Saturday: 9:00 AM - 5:00 PM',
@@ -41,11 +41,11 @@ export class ContactUsComponent implements OnInit {
   ];
 
   socialLinks: SocialLink[] = [
-    { iconClass: 'fab fa-whatsapp', url: 'https://wa.me/919723706169', platform: 'whatsapp' },
-    { iconClass: 'fab fa-facebook-f', url: '#', platform: 'facebook' },
-    { iconClass: 'fab fa-instagram', url: '#', platform: 'instagram' },
-    { iconClass: 'fab fa-youtube', url: '#', platform: 'youtube' },
-    { iconClass: 'fab fa-linkedin-in', url: '#', platform: 'linkedin' }
+    { platform: 'whatsapp', iconClass: 'fab fa-whatsapp', url: 'https://wa.me/919723706169' },
+    { platform: 'facebook', iconClass: 'fab fa-facebook-f', url: 'https://www.facebook.com/merchantayurved/' },
+    { platform: 'instagram', iconClass: 'fab fa-instagram', url: 'https://www.instagram.com/_merchant_campus?igsh=d3V4aHZ2ZGY2b2s2' },
+    { platform: 'youtube', iconClass: 'fab fa-youtube', url: 'https://www.youtube.com/@merchanteducationcampus8683' },
+    { platform: 'linkedin', iconClass: 'fab fa-linkedin-in', url: '#' }
   ];
 
   formData = {

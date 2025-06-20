@@ -29,20 +29,23 @@ import { FacultyMember } from '../models/FacultyMember';
 export class FacultyService {
 
   private mockFacultyList: FacultyMember[] = [
-    { id: 1, name: 'Dr. Laxmanbhai Prajapati', designation: 'Principal', specialization: 'Pharma Chemistry', contactNumber: '9427340043', joiningDate: new Date('2024-12-01') },
-    { id: 2, name: 'Dr. Bhoomi Patel', designation: 'Associate Professor', specialization: 'Quality Assurance', contactNumber: '8460474756', joiningDate: new Date('2025-02-01') },
-    { id: 3, name: 'Khushbu Patel', designation: 'Assistant Professor', specialization: 'Quality Assurance', contactNumber: '9714760662', joiningDate: new Date('2023-02-01') },
-    { id: 4, name: 'Kruti Bhatt', designation: 'Assistant Professor', specialization: 'Pharma Ceutics', contactNumber: '8238490510', joiningDate: new Date('2024-03-01') },
-    { id: 5, name: 'Zalak Patel', designation: 'Assistant Professor', specialization: 'Quality Assurance', contactNumber: '9426305041', joiningDate: new Date('2023-09-11') },
-    { id: 6, name: 'Apurva Barot', designation: 'Assistant Professor', specialization: 'Pharma Cology', contactNumber: '9428386883', joiningDate: new Date('2024-08-05') },
-    { id: 7, name: 'Kena Patel', designation: 'Assistant Professor', specialization: 'Pharma Chemistry', contactNumber: '9537674637', joiningDate: new Date('2024-06-01') },
-    { id: 8, name: 'Mit Patel', designation: 'Assistant Professor', specialization: 'Pharma Ceutics', contactNumber: '9727193410', joiningDate: new Date('2025-02-15') },
-    { id: 9, name: 'Ruchit Patel', designation: 'Assistant Professor', specialization: 'Quality Assurance', contactNumber: '9974155132', joiningDate: new Date('2025-02-17') },
-    { id: 10, name: 'Riya Patel', designation: 'Assistant Professor', specialization: 'Pharma Cology', contactNumber: '9265223007', joiningDate: new Date('2025-02-17') },
-    { id: 11, name: 'Kunjan Patel', designation: 'Assistant Professor', specialization: 'Quality Assurance', contactNumber: '9586281205', joiningDate: new Date('2025-02-24') },
-    { id: 12, name: 'Kushal Saini', designation: 'Assistant Professor', specialization: 'Pharma Ceutics', contactNumber: '9427672857', joiningDate: new Date('2025-03-10') },
-    { id: 13, name: 'Parth Jayswal', designation: 'Assistant Professor', specialization: 'Pharma Ceutics', contactNumber: '9327833287', joiningDate: new Date('2025-03-03') },
-    { id: 14, name: 'Ravi Pathani', designation: 'Assistant Professor', specialization: 'Pharma Ceutics', contactNumber: '7984402132', joiningDate: new Date('2025-03-15') },
+    { id: 1, name: 'Dr.Laxman Prajapati', designation: 'Principal', specialization: '', contactNumber: '', joiningDate: new Date(''), email: 'laxchem@rediffmail.com' },
+    { id: 2, name: 'Dr.Bhoomi M. Patel', designation: 'Asso.Proff.', specialization: '', contactNumber: '', joiningDate: new Date(''), email: 'bhoomi16692@gmail.com' },
+    { id: 3, name: 'Patel Khushbu V.', designation: 'Asst.Proff.', specialization: '', contactNumber: '', joiningDate: new Date(''), email: 'khushbuv4979@gmail.com' },
+    { id: 4, name: 'Patel Mit Jitendrakumar', designation: 'Asst.Proff.', specialization: '', contactNumber: '', joiningDate: new Date(''), email: 'mit444p@gmail.com' },
+    { id: 5, name: 'Patel Kunjan Harshdbhai', designation: 'Asst.Proff.', specialization: '', contactNumber: '', joiningDate: new Date(''), email: 'kunjanpatel6944@gmail.com' },
+    { id: 6, name: 'Patel Ruchitkumar Vishnubhai', designation: 'Asst.Proff.', specialization: '', contactNumber: '', joiningDate: new Date(''), email: 'ruchitpatel316@gmail.com' },
+    { id: 7, name: 'Patel Riya Pareshkumar', designation: 'Asst.Proff.', specialization: '', contactNumber: '', joiningDate: new Date(''), email: 'riyapatel6336@gmail.com' },
+    { id: 8, name: 'Patel kena Gauravbhai', designation: 'Asst.Proff.', specialization: '', contactNumber: '', joiningDate: new Date(''), email: '' },
+    { id: 9, name: 'Ravi M. Pethani', designation: 'Asst.Proff.', specialization: '', contactNumber: '', joiningDate: new Date(''), email: 'ravipethani1776@gmail.com' },
+    { id: 10, name: 'Jayswal J. Parth', designation: 'Asst.Proff.', specialization: '', contactNumber: '', joiningDate: new Date(''), email: 'parthjayswal0645@gmail.com' },
+    { id: 11, name: 'Kushal A.Saini', designation: 'Asst.Proff.', specialization: '', contactNumber: '', joiningDate: new Date(''), email: 'sainikushal87@gmail.com' },
+    { id: 12, name: 'PATEL MOSAM P.', designation: 'Asst.Proff.', specialization: '', contactNumber: '', joiningDate: new Date(''), email: 'mosampatel2112@gmail.com' },
+    { id: 13, name: 'PRAJAPATI DHRUV S.', designation: 'Asst.Proff.', specialization: '', contactNumber: '', joiningDate: new Date(''), email: 'dhruvprajapati6650@gmail.com' },
+    { id: 14, name: 'PATEL HAPPYKUMAR R.', designation: 'Asst.Proff.', specialization: '', contactNumber: '', joiningDate: new Date(''), email: 'happypatel3570@gamil.com' },
+    { id: 15, name: 'PATEL MESHVA R.', designation: 'Asst.Proff.', specialization: '', contactNumber: '', joiningDate: new Date(''), email: 'patelmeshva99@gmail.com' },
+    { id: 16, name: 'Patel Yash', designation: 'Asst.Proff.', specialization: '', contactNumber: '', joiningDate: new Date(''), email: 'yashpatel9756@gmail.com' },
+    { id: 17, name: 'Patel Naiya', designation: 'Asst.Proff.', specialization: '', contactNumber: '', joiningDate: new Date(''), email: 'naiyapatel4841@gmail.com' }
   ];
 
   getAllFaculties(): Observable<FacultyMember[]> {

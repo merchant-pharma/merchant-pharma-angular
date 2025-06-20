@@ -9,7 +9,7 @@ import { NgwWowService } from 'ngx-wow';
   styleUrl: './introduction-vision.component.css'
 })
 export class IntroductionVisionComponent implements OnInit {
-  introductionText: string = `Merchant Pharmacy College, Mehsana, established in 2022, is a premier institution dedicated to pharmaceutical education and research. Managed by Merchant Charitable Trust, our college is affiliated with Gujarat Technological University and approved by the Pharmacy Council of India. Located in the heart of Mehsana, Gujarat, we provide state-of-the-art facilities and a conducive learning environment for aspiring pharmacists.
+  introductionText: string = `Merchant Pharmacy College, Mehsana, established in 2022, is a premier institution dedicated to pharmaceutical education and research. Managed by Merchant Charitable Trust, our college is affiliated with Gujarat Technological University and approved by the Pharmacy Council of India. Located at No 9, JCQW+XW9 Radhe Vijay Garden, Basana College Campus, Basna, Chitrodipura, Gujarat 384001, we provide state-of-the-art facilities and a conducive learning environment for aspiring pharmacists.
                             Our college boasts modern laboratories, well-equipped classrooms, and a comprehensive library. We focus on practical training, industry exposure, and research opportunities to prepare students for successful careers in pharmacy. Our experienced faculty members are committed to nurturing talent and fostering innovation in pharmaceutical sciences.`;
 
   visionStatement: string = "To emerge as a center of excellence in pharmaceutical education and research, producing competent pharmacists who contribute to healthcare advancement and pharmaceutical innovation in Gujarat and beyond."

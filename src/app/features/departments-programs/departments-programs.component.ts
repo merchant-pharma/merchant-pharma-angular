@@ -5,7 +5,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-departments-programs',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, RouterOutlet],
+  imports: [ RouterOutlet],
   templateUrl: './departments-programs.component.html',
   styleUrls: ['./departments-programs.component.css']
 })

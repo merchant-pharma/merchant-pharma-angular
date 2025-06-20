@@ -5,5 +5,6 @@ export interface FacultyMember {
   specialization?: string;
   contactNumber?: string;
   joiningDate: Date;
+  email?: string;
   // Add any other relevant properties from your backend entity
 }
